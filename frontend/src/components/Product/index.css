@@ -1,0 +1,72 @@
+/* Product Section */
+.product-list-section {
+  padding: 40px;
+  text-align: center;
+}
+
+/* Title */
+.product-list-title {
+  font-size: 34px;
+  font-weight: bold;
+  margin: 28px 0px;
+  text-align: justify;
+}
+
+/* Cards Container */
+.product-list-cards1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four cards in a row */
+  gap: 30px;
+  justify-items: center;
+}
+
+.product-list-card1 {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Remove underline from links */
+.product-list-card1 a {
+  text-decoration: none; /* Removes the underline from the links */
+  color: inherit; /* Makes sure the text color is inherited from the parent element */
+}
+
+/* Card Zoom Effect */
+.product-list-card1:hover {
+  transform: scale(1.1); /* Zoom effect */
+}
+
+/* Product Image */
+.product-list-image {
+  width: 247px;
+  height: 178px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Card Name */
+.product-list-card1 h3 {
+  font-size: 20px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Card Description */
+.product-list-card1 p {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}

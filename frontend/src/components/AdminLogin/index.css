@@ -1,0 +1,102 @@
+/* Container for the login form */
+.admin-login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  /* Title for the login form */
+  .admin-login-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Message display for success or error */
+  .admin-login-message {
+    font-size: 1rem;
+    color: red;
+    margin-bottom: 15px;
+  }
+  
+  /* Form container */
+  .admin-login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Input fields for phone number and password */
+  .admin-login-input {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Change border color on input focus */
+  .admin-login-input:focus {
+    border-color: #007bff;
+  }
+  
+  /* Login button styling */
+  .admin-login-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Change background color on hover */
+  .admin-login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add some margin at the top of the form */
+  .admin-login-form {
+    margin-top: 20px;
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    .admin-login-container {
+      padding: 10px;
+    }
+  
+    .admin-login-title {
+      font-size: 1.8rem;
+    }
+  
+    .admin-login-form {
+      padding: 20px;
+    }
+  
+    .admin-login-input {
+      font-size: 0.9rem;
+    }
+  
+    .admin-login-button {
+      font-size: 1rem;
+    }
+  }
+  
