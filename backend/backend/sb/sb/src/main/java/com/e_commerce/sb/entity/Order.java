@@ -1,7 +1,7 @@
 package com.e_commerce.sb.entity;
 
 import java.math.BigDecimal;
-
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,6 +33,8 @@ public class Order {
     @Column(precision = 10, scale = 2)
     private BigDecimal price;
 
+    @Column(name = "order_date")
+    private LocalDateTime date;
     
 
     @Column(length = 255) // Length matches the SQL definition
@@ -49,15 +51,20 @@ public class Order {
     public Order() {
     }
 
-    // Constructor with required fields
-    public Order(Long userId, BigDecimal price, String status, int quantity, Long productId) {
-        this.userId = userId;
-        this.price = price;
-        this.status = status;
-        this.quantity = quantity;
-        this.productId = productId;
-    }
+    public Order(Long orderId, Long userId, BigDecimal price, LocalDateTime date, String status, int quantity,
+			Long productId) {
+		super();
+		this.orderId = orderId;
+		this.userId = userId;
+		this.price = price;
+		this.date = date;
+		this.status = status;
+		this.quantity = quantity;
+		this.productId = productId;
+	}
 
+	// Constructor with required fields
+   
 	public Long getOrderId() {
 		return orderId;
 	}
@@ -109,5 +116,21 @@ public class Order {
 	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
+
+	public LocalDateTime getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDateTime date) {
+		this.date = date;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", userId=" + userId + ", price=" + price + ", date=" + date + ", status="
+				+ status + ", quantity=" + quantity + ", productId=" + productId + "]";
+	}
+	
+	
 
 }

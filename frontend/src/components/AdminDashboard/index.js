@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import AdminSideMenu from '../AdminSideMenu'; // Side menu component
 import AdminCategory from '../AdminCategory'; // Category management page
 import AdminProducts from '../AdminProduct'; // Products management page
+import SalesDashboard from '../SalesDashboard';
 import { AuthContext } from '../../context/AuthContext'; // Auth context
 import './index.css'; 
+
 
 const AdminDashboard = () => {
   const { admin } = useContext(AuthContext); // Get admin from AuthContext
@@ -25,6 +27,8 @@ const AdminDashboard = () => {
         return <AdminCategory />;
       case 'products':
         return <AdminProducts />;
+        case 'sales':
+          return <SalesDashboard />;
       // Add more cases here as needed for future tabs
       default:
         return <AdminCategory />; // Default to Categories component

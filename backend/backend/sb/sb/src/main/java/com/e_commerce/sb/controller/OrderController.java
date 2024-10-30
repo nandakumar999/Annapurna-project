@@ -2,9 +2,11 @@ package com.e_commerce.sb.controller;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,7 @@ import com.e_commerce.sb.service.OrderService;
 
 
 @RestController
-@RequestMapping("/api/order") // Set the base path for the controller
+@RequestMapping("/order") // Set the base path for the controller
 public class OrderController {
 	
 	@Autowired
@@ -33,17 +35,16 @@ public class OrderController {
 	    }
 	  
 	  
-	
-	  
-//	  
-//	@GetMapping()
-//	public List<Order> getAll() {
-//		return orderService.getAll();
-//	}
-//	
+		@GetMapping()
+		public List<Order> getAll() {
+			return orderService.getAll();
+		}
+
 //	
 //	@GetMapping("/{id}")
 //	public Optional<Order> getById(@Validated @PathVariable Long id) {
 //		return orderService.getById(id);
 //	}
+		
+		
 }

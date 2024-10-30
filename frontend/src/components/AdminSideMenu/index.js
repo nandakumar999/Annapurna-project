@@ -11,6 +11,9 @@ const AdminSideMenu = ({ setActiveTab }) => {
         <li className="admin-menu-item" onClick={() => setActiveTab('products')}>
           Products
         </li>
+        <li className="admin-menu-item" onClick={() => setActiveTab('sales')}>
+          Sales
+        </li>
       </ul>
     </div>
   );
