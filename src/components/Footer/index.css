@@ -1,0 +1,116 @@
+.footer {
+    /* background: url('./your-background-image.jpg') no-repeat center center;  */
+    background-size: cover; /* Adjust background size */
+    color: white; /* Text color */
+    padding: 40px 20px;
+    background-color: #a66bb9;
+    text-align: justify;
+    position: relative;
+    z-index: 1;
+  
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-logo {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .footer-logo-image {
+    width: 278px; /* Adjust logo size */
+  }
+  
+  .footer-social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-social-icons svg {
+    margin: 0 10px;
+    font-size: 20px;
+    color: white; /* Social icon color */
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .footer-social-icons svg:hover {
+    color: #700e50; /* Change color on hover */
+  }
+  
+  .footer-links {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .footer-links h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-links ul li a {
+    color: white; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #700e50; /* Change link color on hover */
+  }
+  
+  .footer-subscribe {
+    flex: 1;
+    text-align: justify;
+  }
+  
+  .subscribe-input {
+    padding: 10px;
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .subscribe-button {
+    background-color: #59186e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .subscribe-button:hover {
+    background-color: #700e50;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Footer does not overlap or float over other content */
+.footer {
+  clear: both; /* Ensures footer does not overlap with floating elements */
+  width: 100%; /* Footer spans the entire width */
+  position: relative;
+  bottom: 0; /* Stick to the bottom */
+  left: 0;
+}

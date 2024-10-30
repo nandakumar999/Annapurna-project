@@ -1,0 +1,113 @@
+/* Cart.css */
+
+/* Cart page container */
+.cart-page {
+    padding: 112px 20px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-page h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Cart is empty message */
+  .cart-page p {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  /* Cart item container */
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-item h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #333;
+  }
+  
+  /* Cart item image */
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Cart item details */
+  .cart-item div {
+    flex-grow: 1;
+    padding: 0 15px;
+  }
+  
+  .cart-item p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  /* Remove button */
+  button {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 15px;
+  }
+  
+  button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Proceed to checkout link */
+  .cart-page a {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .cart-page a:hover {
+    background-color: #45a049;
+  }
+  
+  @media (max-width: 768px) {
+    .cart-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .cart-item div {
+      padding: 10px 0;
+    }
+  
+    .cart-item-image {
+      margin-bottom: 10px;
+    }
+  }
+  
