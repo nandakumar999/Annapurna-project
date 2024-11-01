@@ -1,5 +1,7 @@
 package com.e_commerce.sb.entity;
 
+import java.math.BigInteger;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +20,7 @@ public class ProductPrice {
 	@Column(name="product_id")
 	private Long productId;
 	@Column(name="product_grams")
-	private Long productGrams;
+	private BigInteger productGrams;
 	
 	
 	@Column(name="product_price")
@@ -38,7 +40,7 @@ public class ProductPrice {
 	public ProductPrice() {
 		super();
 	}
-	public ProductPrice(Long productCostId, Long productId, Long productGrams, String productCost) {
+	public ProductPrice(Long productCostId, Long productId, BigInteger productGrams, String productCost) {
 		super();
 		this.productCostId = productCostId;
 		this.productId = productId;
@@ -57,10 +59,10 @@ public class ProductPrice {
 	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
-	public Long getProductGrams() {
+	public BigInteger getProductGrams() {
 		return productGrams;
 	}
-	public void setProductGrams(Long productGrams) {
+	public void setProductGrams(BigInteger productGrams) {
 		this.productGrams = productGrams;
 	}
 	public String getProductCost() {

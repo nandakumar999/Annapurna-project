@@ -2,13 +2,15 @@ package com.e_commerce.sb.service;
  
 import java.util.List;
 import java.util.Optional;
- 
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
- 
+
 import com.e_commerce.sb.entity.Product;
 import com.e_commerce.sb.repository.ProductRepository;
- 
+
 import jakarta.transaction.Transactional;
  
 @Service
@@ -25,7 +27,6 @@ public class ProductService {
 	public Product getByName(String name) {
 		return productRepository.findByProductName(name);
 	}
- 
 	public Product insert(Product product) {
 		return productRepository.save(product);
 	}
@@ -50,9 +51,10 @@ public class ProductService {
 					return productRepository.save(updatedProduct);
 					}
 				);
- 
-		
 	}
 
- 
+	public  List<String>  stocksUpdate(){
+			return productRepository.findAll().stream().filter(item->item.getProductStock() <5 ).map(
+						item->item.getProductName()+" products are less than five ").collect(Collectors.toList());
+	}
 }

@@ -2,7 +2,7 @@ package com.e_commerce.sb.controller;
  
 import java.util.List;
 import java.util.Optional;
- 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
- 
+
 import com.e_commerce.sb.entity.Product;
 import com.e_commerce.sb.service.ProductService;
 @CrossOrigin(origins = "http://localhost:3000")
@@ -25,11 +25,15 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 
-
+	
 	@GetMapping
 	public List<Product> getAll(){
 		return productService.getAll();
 	}
+	
+	
+	
+	
 	@GetMapping("/{name}")
 	public Product getByName(@PathVariable String name) {
 		return productService.getByName(name);
@@ -52,5 +56,8 @@ public class ProductController {
 		return productService.update(id,product);
 	}
 
- 
+	@GetMapping("/stockupdate")
+	public List<String > Stockupdate(){
+		return productService.stocksUpdate();
+	}
 }

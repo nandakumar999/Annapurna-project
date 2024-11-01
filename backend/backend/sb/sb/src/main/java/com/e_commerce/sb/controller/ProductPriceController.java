@@ -1,5 +1,6 @@
 package com.e_commerce.sb.controller;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +27,9 @@ public class ProductPriceController {
 	}
 	
 	@GetMapping("/{id}/{weight}")
-	public Optional<String> get(@PathVariable Long id, @PathVariable Long weight) {
+	public ProductPrice get(@PathVariable Long id, @PathVariable BigInteger weight) {
+		
+		System.out.println(id +""+weight);
 		return productPriceService.productPrice(id, weight);
 	}
 }

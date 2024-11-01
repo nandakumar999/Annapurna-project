@@ -1,5 +1,6 @@
 package com.e_commerce.sb.service;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,10 +22,16 @@ public class ProductPriceService {
 	}
 	
 	
-	public Optional<String> productPrice(Long productId, Long grams) {
-		return productPriceRepository.findByProductId(productId).stream()
-	            .filter(price -> price.getProductGrams()==(grams))
-	            .map(ProductPrice::getProductCost).findAny();
+	public ProductPrice productPrice(Long productId, BigInteger grams) {
+		return productPriceRepository.findByProductIdAndProductGrams(productId, grams);
+		
+				//.stream()
+				
+//				
+//	            .filter(price -> price.getProductGrams()==(grams))
+//	            
+//	            
+//	            .map(ProductPrice::getProductCost).findAny();
 
 	}
 
