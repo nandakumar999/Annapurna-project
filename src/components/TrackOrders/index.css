@@ -1,0 +1,496 @@
+/* TrackOrder.css */
+
+/* Container */
+.track-container {
+  padding: 5%;
+}
+
+/* Order Details */
+.track-header {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.order-title {
+  font-size: 25px;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+.order-date {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.status-bar {
+  padding: 4%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.status-names {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 0px 0px;
+}
+
+.status-name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.order-status {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.progress-bar {
+  width: 96%;
+  height: 8px;
+  background-color: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  margin-left: 15px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #28a745;
+  transition: width 0.4s ease-in-out;
+}
+
+.status-bubbles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -15px;
+  padding: 0 0px;
+}
+
+.status-bubble {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  width: 50px; /* Adjust width of bubble container */
+}
+
+
+.bubble {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ddd;
+  transition: background-color 0.3s ease;
+}
+
+
+.bubble.completed {
+  background-color: #28a745;
+  border-color: #388e3c;
+}
+
+.bubble {
+  background-color: #ccc;
+}
+
+.status-bubble p {
+  font-size: 12px;
+  color: #333;
+  margin-top: 8px;
+}
+
+
+
+/* Basic Styling */
+.courier-details {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  /* border-radius: 8px; */
+  border-bottom: 1px solid #000;
+}
+
+.courier-tacking-details-row {
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin-bottom: 10px;
+  gap: 732px;
+}
+
+.courier-inside-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-inside-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.shipment-tracking-details-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 9px;
+}
+
+.courier-name {
+  font-weight: bold;
+  margin-right: 10px;
+  width: 100%;
+  min-width: 120px;
+  margin-bottom: 0px;
+}
+
+
+.tacking-number {
+  font-weight: bold;
+  margin-right: 10px;
+  width: 100%;
+  min-width: 120px;
+  margin-bottom: 0px;
+}
+
+
+.shipment-tracking {
+  font-weight: bold;
+  width: 100%;
+  min-width: 120px;
+  text-align: start;
+}
+
+.courier-info {
+  border: 2px solid #ccc;
+  padding: 7px 47px 7px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.tacking-info {
+  border: 2px solid #ccc;
+  padding: 7px 40px 7px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.shipment-info {
+  font-size: 14px;
+  color: #333;
+  width: 93%;
+  border: 2px solid #ccc;
+  padding: 7px 40px 7px;
+  border-radius: 5px;
+  text-align: start;
+}
+
+.tracking-link {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.tracking-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+.tracking-link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.order-items {
+  background-color: #ccc;
+  padding: 3%;
+  border-radius: 7px;
+}
+
+.items-header {
+  font-size: 25px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  background-color: #fff;
+  padding: 20px;
+  /* border: 1px solid #a6a2a2; */
+  border-radius: 7px;
+}
+
+.item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.item-details {
+  width: 45%;
+  margin-left: 15px;
+}
+
+.item-qty {
+  width: 34%;
+  text-align: center;
+}
+
+.item-price {
+  text-align: right;
+  font-weight: bold;
+  width: 40%;
+}
+
+.pricing-summary {
+  padding-top: 10px;
+  text-align: end;
+}
+
+.green {
+  color: green;
+}
+
+.total-cost {
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  text-align: end;
+}
+
+.status-date-container {
+  display: flex; 
+  gap: 5px; 
+  align-items: center; 
+}
+
+.status-day {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+
+.status-date {
+  font-size: 14px;
+  color: #888;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+  .track-container {
+    padding: 10px;
+  }
+
+  .track-header {
+    font-size: 18px;
+  }
+
+  .order-title {
+    font-size: 20px;
+  }
+
+  .status-bar {
+    padding: 4%;
+  }
+  .items-header{
+    text-align: center;
+  }
+  .status-names {
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+
+  .progress-bar {
+    width:87%;
+  }
+
+  .status-bubbles {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .item {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .item-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .item-details {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .item-qty, .item-price {
+    width: 100%;
+    text-align: center;
+  }
+
+  .courier-tacking-details-row {
+    gap: 20px;
+  }
+
+  .courier-info, .tacking-info, .shipment-info {
+    width: 77%;
+    text-align: left;
+    padding: 10px;
+  }
+
+  .order-items {
+    padding: 5%;
+  }
+  .courier-name{
+    font-size: 14px;
+    text-align: start;
+  }
+  .tacking-number{
+    font-size: 14px;
+  }
+  .pricing-summary {
+    padding-top: 10px;
+    text-align: center;
+  }
+  .total-cost{
+    text-align: center;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .track-container {
+    padding: 5%;
+  }
+
+  .track-header {
+    font-size: 22px;
+  }
+
+  .status-bar {
+    padding: 4%;
+  }
+
+  .status-names {
+    flex-direction: row;
+  }
+
+  .progress-bar {
+    width: 95%;
+  }
+
+  .status-bubbles {
+    gap: 20px;
+  }
+
+  .item {
+    padding: 18px;
+  }
+
+  .item-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .item-details {
+    width: 50%;
+    margin-left: 15px;
+  }
+
+  .item-qty, .item-price {
+    width: 30%;
+  }
+
+  .courier-tacking-details-row {
+    gap: 50px;
+  }
+
+  .courier-info, .tacking-info, .shipment-info {
+    width: 90%;
+    text-align: left;
+    padding: 12px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .track-container {
+    padding: 5%;
+  }
+
+  .track-header {
+    font-size: 25px;
+  }
+
+  .status-bar {
+    padding: 4%;
+  }
+
+  .status-names {
+    flex-direction: row;
+  }
+
+  .progress-bar {
+    width: 96%;
+  }
+
+  .status-bubbles {
+    gap: 30px;
+  }
+
+  .item {
+    padding: 20px;
+  }
+
+  .item-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .item-details {
+    width: 45%;
+    margin-left: 15px;
+  }
+
+  .item-qty, .item-price {
+    width: 30%;
+  }
+
+  .courier-tacking-details-row {
+    gap: 80px;
+  }
+
+  .courier-info, .tacking-info, .shipment-info {
+    width: 85%;
+    text-align: left;
+    padding: 15px;
+  }
+}

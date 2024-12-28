@@ -1,0 +1,440 @@
+/* General Styling */
+.signup-container {
+  background-image: url("../../../public/img/login_Register_banner.jpg"); /* Corrected path */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Poppins", serif;
+  margin: 0px;
+  padding: 0px;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Creates a 12-column grid */
+  gap: 20px; /* Adds space between the columns */
+  width: 100%;
+  margin: 0; /* Removes any unnecessary margin */
+}
+
+.singnup_top_wrapper-left-side {
+  grid-column: span 5; /* Occupies 5 out of 12 columns */
+  padding: 20px 30px;
+  padding-bottom: 155px;
+  margin: 0;
+}
+
+.text-content-right-side {
+  grid-column: span 6;
+  padding-top: 160px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 90px;
+  padding-bottom: 140px;
+}
+
+.signup_form_wrapper {
+  /* width: 100%;
+  background: #fff;
+  height: auto;
+  border-radius: 50px;
+  padding: 35px 44px 28px; */
+  width: 100%; 
+  max-width: 900px; 
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px 30px; /* Reduced padding for compactness */
+  margin: 0 auto; 
+}
+
+.logo-container {
+  margin-left: -24px;
+  text-align: start;
+}
+
+.form_logo {
+  width: 200px;
+  height: auto;
+}
+
+.sign_tite {
+  font-family: sans-serif;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: start;
+}
+
+
+
+/* Form input styling */
+.signup_names {
+  display: flex; /* Flexbox container */
+  justify-content: space-between; /* Space between the items */
+  gap: 35px; /* Optional: Adjusts the gap between the two fields */
+}
+
+
+.group {
+  position: relative;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.name_input {
+  font-size: 18px;
+  padding: 10px 0px 10px 0px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0px;
+  font-family: sans-serif;
+}
+
+.name_input:focus {
+  outline: none;
+}
+
+ .signup-label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  font-family: sans-serif;
+}
+
+.name_input:focus ~ .signup-label,
+.name_input:valid ~ .signup-label {
+  top: -7px;
+  font-size: 14px;
+  color: #5264ae;
+  left: 0px;
+}
+
+.signup-bar {
+  position: relative;
+  display: block;
+}
+
+.signup-bar:before,
+.signup-bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #25542b;
+  transition: 0.2s ease all;
+}
+
+.signup-bar:before {
+  left: 50%;
+}
+
+.signup-bar:after {
+  right: 50%;
+}
+
+.name_input:focus ~ .signup-bar:before,
+.name_input:focus ~ .signup-bar:after {
+  width: 50%;
+}
+
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.name_input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #25542b;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+/* Forgot Password Link */
+.forgotCreating_wrapper {
+  margin-top: -18px;
+}
+
+.forgotCreating_link {
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  float: right;
+  color: #25542b;
+}
+
+.create-account {
+  width: 100%;
+  padding: 15px;
+  background: #25542b;
+  color: #fff;
+  font-size: 18px;
+  border: 0px;
+  border-radius: 15px;
+  font-weight: 500;
+  margin: 21px 0px;
+  cursor: pointer;
+}
+
+.create-account:hover {
+  background-color: #034e1d;
+}
+
+.create-account_1 {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: start;
+  font-family: sans-serif;
+}
+
+.create_2 {
+  color: #25542b;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+/* Right-side text content */
+.text-content-right-side h1 {
+  font-size: 54px;
+  font-weight: 600;
+  font-family: sans-serif;
+  line-height: 58px;
+  text-align: start;
+}
+
+.text-content-right-side p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+  text-align: start;
+  font-family: sans-serif;
+}
+
+.success-message {
+  color: #4CAF50; 
+  background-color: #f0fdf4; 
+  border: 1px solid #d4edda; 
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  font-weight: bold; 
+  text-align: center; 
+  /* margin: 15px 0;  */
+  animation: fadeIn 1s ease-in-out; 
+}
+
+
+
+/* Optional: Add a fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* Slight slide from top */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Settle in place */
+  }
+}
+
+
+
+@media screen and (max-width: 468px) {
+  .signup_form_wrapper {
+      background: #fff;
+      height: auto;
+      border-radius: 20px;
+      padding: 35px 44px 28px;
+      width: 70%;
+  }
+
+  .signup-label {
+    font-size: 16px;
+  }
+  .forgotCreating_link  {
+    padding-top: 20px;
+  }
+}
+/* Responsive Design */
+
+/* Mobile - Screens up to 767px */
+@media (max-width: 767px) {
+  .signup-grid {
+    grid-template-columns: 1fr; /* Full-width columns for mobile */
+  }
+
+  .singnup_top_wrapper-left-side, .text-content-right-side {
+    grid-column: span 12;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .singnup_top_wrapper-left-side {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 155px;
+  }
+
+  .signup_form_wrapper {
+    padding: 14px 36px;
+  }
+
+  .text-content-right-side {
+    padding-top: 20px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    display: none;
+  }
+
+  .sign_tite {
+    font-size: 28px; /* Slightly smaller font on mobile */
+    text-align: start;
+  }
+
+  .logo-container {
+    text-align: start;
+    /* margin-left: 0; */
+    margin-bottom: -25px;
+  }
+
+  .create-account {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .create-account_1 {
+    text-align: start;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .group {
+    margin-bottom: 5px;
+  }
+}
+
+/* Tablet - Screens between 768px and 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .signup-grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+  }
+
+  .singnup_top_wrapper-left-side {
+    grid-column: span 6; /* 6 out of 12 columns */
+    padding-top: 155px;
+  }
+
+  .text-content-right-side {
+    grid-column: span 6;
+    padding-left: 40px;
+    padding-top: 155px;
+  }
+
+  .text-content-right-side h1 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .sign_tite {
+    font-size: 30px; /* Adjusted for tablet view */
+    text-align: start;
+  }
+
+  .create-account {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .create-account_1 {
+    font-size: 18px;
+    text-align: start;
+  }
+
+  .group {
+    margin-bottom: 5px;
+  }
+
+  .logo-container {
+    text-align: start;
+    /* margin-left: 0; */
+    margin-bottom: -25px;
+  }
+}
+
+/* Desktop - Screens larger than 1024px */
+@media (min-width: 1025px) {
+  .signup-grid {
+    grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+    gap: 30px;
+  }
+
+  .singnup_top_wrapper-left-side {
+    grid-column: span 5;
+    padding-top: 155px;
+  }
+
+  .text-content-right-side {
+    grid-column: span 6;
+    padding-top: 160px;
+    /* padding-left: 90px; */
+  }
+
+  .sign_tite {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: start;
+  }
+
+  .logo-container {
+    text-align: start;
+    margin-left: -24px;
+  }
+
+  .create-account {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  .create-account_1 {
+    font-size: 18px;
+    text-align: start;
+  }
+
+  .group {
+    margin-bottom: 14px;
+  }
+}

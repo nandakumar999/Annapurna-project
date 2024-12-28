@@ -1,88 +1,279 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
-import './index.css';
+import "./index.css";
 
 const CheckoutProcess = () => {
+  // const [useShippingAddress, setUseShippingAddress] = useState(true);
     const { user } = useContext(AuthContext);
-    const [cartItems, setCartItems] = useState([]); // This would be loaded from your cart context or local storage
-    const [totalAmount, setTotalAmount] = useState(0);
-    const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
+  // Form field states
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address, setAddress] = useState("");
+  const [apartment, setApartment] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [pinCode, setPinCode] = useState("");
+  const [phone, setPhone] = useState("");
+  const [cartItems, setCartItems] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
+  const [shipping, setShipping] = useState(50);
+  const [totalAmount, setTotalAmount] = useState(0);
+  
+  const [shippingMethod, setShippingMethod] = useState("standard");
+  // const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        // Load cart items from local storage or context (as needed)
-        const storedCart = localStorage.getItem('cart');
-        if (storedCart) {
-            setCartItems(JSON.parse(storedCart));
-        }
-    }, []);
 
-    useEffect(() => {
-        // Calculate total amount
-        const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-        setTotalAmount(total);
-    }, [cartItems]);
+  useEffect(() => {
+    // Fetch cart data based on user login status
+    const fetchCartData = async () => {
+      // setLoading(true);
+      try {
+        if (user && user.userId) {
+          // User is logged in, fetch cart from API
+          const response = await fetch(`http://localhost:8080/cart/${user.userId}`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch cart data');
+          }
+          const data = await response.json();
+          const mappedCart = data.map(item => ({
+            productId: item.cartId,
+            productName: item.productName,
+            price: item.productPrice,
+            selectedWeight: item.productGram,
+            // productImg: item.productImg,
+            quantity: item.productQuantity,
+          }));
+          setCartItems(mappedCart);
+          // localStorage.setItem('cart', JSON.stringify(mappedCart)); 
 
-    const handleOrderSubmit = async () => {
-        setLoading(true);
-       
-        const orderData = {
-            user: {
-                userId: user.userId, // Adjust based on your user object structure
-            },
-            price: totalAmount,
-            orderDate: new Date().toISOString(),
-            status: 'Pending',
-            quantity: cartItems.reduce((acc, item) => acc + item.quantity, 0), // Total quantity
-            // Assuming you want to associate products, map cart items to product references
-            product: cartItems.map(item => ({ productId: item.productId })) // Adjust based on your product structure
-        };
-
-        try {
-            const response = await fetch('/api/orders/order', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(orderData),
-            });
-           
-            if (response.ok) {
-                const orderConfirmation = await response.json();
-                // Handle successful order submission (e.g., show message or redirect)
-                console.log('Order confirmed:', orderConfirmation);
-                localStorage.removeItem('cart'); // Clear cart after successful order
-                navigate('/order-confirmation'); // Redirect to order confirmation page
-            } else {
-                // Handle error response
-                console.error('Order submission failed');
-            }
-        } catch (error) {
-            console.error('Error submitting order:', error);
-        } finally {
-            setLoading(false);
-        }
+        } //else {
+        //   const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+        //   setCartItems(storedCart);
+        // }
+      } catch (error) {
+        console.error('Error fetching cart data:', error);
+      } //finally {
+      //   setLoading(false);
+      // }
     };
 
+    fetchCartData();
+
+  }, [user, setCartItems]);
+
+    useEffect(() => {
+      // Calculate total amount
+      const calculatedSubtotal  = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+      setSubtotal(calculatedSubtotal );
+
+      // if (calculatedSubtotal > 500) {
+      //   setShipping(0);  // Free shipping for orders above ₹500
+      // } else {
+        setShipping(50); // Flat ₹50 shipping fee for orders below ₹500
+      // }
+
+      const total = calculatedSubtotal + shipping;
+      setTotalAmount(total);
+
+    }, [cartItems, shipping]);
+
+  // Check if all required fields are filled
+  const isFormComplete = () => {
     return (
-        <div className="checkout-container">
-            <h2 className="checkout-title">Checkout Process</h2>
-            <h3 className="checkout-total">Total Amount: {totalAmount.toFixed(2)} INR</h3>
-            <ul className="checkout-items-list">
-                {cartItems.map(item => (
-                    <li className="checkout-item" key={item.productId}>
-                        <span className="checkout-item-name">{item.productName}</span>
-                        <span className="checkout-item-quantity">x {item.quantity}</span>
-                        <span className="checkout-item-price">{item.price.toFixed(2)} INR</span>
-                    </li>
-                ))}
-            </ul>
-            <button className="checkout-btn" onClick={handleOrderSubmit} disabled={loading}>
-                {loading ? 'Placing Order...' : 'Place Order'}
-            </button>
-        </div>
+      firstName && 
+      lastName && 
+      address && 
+      city && 
+      state && 
+      pinCode && 
+      phone
     );
+  };
+
+  // const handleAddressToggle = () => {
+  //   setUseShippingAddress(!useShippingAddress);
+  // };
+
+
+
+  // Enable/Disable "Pay Now" button
+  const isPayNowDisabled = !isFormComplete();
+
+  
+
+  return (
+    <div className="payment_gateway-container">
+      <div className="payment_gateway-left">
+        <form>
+          {/* Delivery Section */}
+          <div className="payment_gateway-section">
+            <h2>Delivery</h2>
+            <label className="payment_gateway_cr">Country/Region</label>
+            <div className="payment_gateway-row">
+              <select>
+                <option value="India">India</option>
+                {/* <option value="USA">USA</option>
+                <option value="UK">UK</option> */}
+              </select>
+            </div>
+
+            <div className="payment_gateway-row">
+              <input 
+                type="text" 
+                placeholder="First name" 
+                value={firstName} 
+                onChange={(e) => setFirstName(e.target.value)} 
+              />
+              <input 
+                type="text" 
+                placeholder="Last name" 
+                value={lastName} 
+                onChange={(e) => setLastName(e.target.value)} 
+              />
+            </div>
+
+            <div className="payment_gateway-row">
+              <input 
+                type="text" 
+                placeholder="Address" 
+                value={address} 
+                onChange={(e) => setAddress(e.target.value)} 
+              />
+              <input 
+                type="text" 
+                placeholder="Apartment, suite, etc. (optional)" 
+                value={apartment} 
+                onChange={(e) => setApartment(e.target.value)} 
+              />
+            </div>
+
+            <div className="payment_gateway-row">
+              <input 
+                type="text" 
+                placeholder="City" 
+                value={city} 
+                onChange={(e) => setCity(e.target.value)} 
+              />
+              <select 
+                value={state} 
+                onChange={(e) => setState(e.target.value)}
+              >
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Karnataka">Karnataka</option>
+              </select>
+              <input 
+                type="text" 
+                placeholder="PIN code" 
+                value={pinCode} 
+                onChange={(e) => setPinCode(e.target.value)} 
+              />
+            </div>
+
+            <div className="payment_gateway-row">
+              <input 
+                type="text" 
+                placeholder="Phone" 
+                value={phone} 
+                onChange={(e) => setPhone(e.target.value)} 
+              />
+            </div>
+
+            <div className="payment_gateway-checkbox_0">
+              <label >
+                <input type="checkbox" /> Save this information for next time
+              </label>
+            </div>
+          </div>
+
+          {/* Shipping Method */}
+          <div className="payment_gateway-section">
+            <h2>Shipping method</h2>
+            <div className="payment_gateway-shipping-method">
+              <label>
+                <input 
+                  type="radio" 
+                  name="shipping" 
+                  checked={shippingMethod === "standard"} 
+                  onChange={() => setShippingMethod("standard")}
+                /> 
+                Standard Shipping
+              </label>
+              <span>₹50</span>
+            </div>
+          </div>
+
+          {/* Payment Section */}
+          <div className="payment_gateway-section">
+            <h2>Payment</h2>
+            <p className="payment_gateway_paragraph">All transactions are secure and encrypted.</p>
+
+            <div className="payment_gateway-payment-method">
+              <div className="payment_gateway-payment-image">
+                <img src="/img/upi_image.png" alt="payment-upi" />
+              </div>
+            </div>
+          </div>
+
+          {/* Billing Address */}
+          {/* <div className="payment_gateway-section">
+            <h2>Billing address</h2>
+            <label>
+              <input
+                type="radio"
+                name="billing"
+                checked={useShippingAddress}
+                onChange={handleAddressToggle}
+              />
+              Same as shipping address
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="billing"
+                checked={!useShippingAddress}
+                onChange={handleAddressToggle}
+              />
+              Use a different billing address
+            </label>
+          </div> */}
+
+          {/* Pay Now Button */}
+          <button 
+            type="submit" 
+            className="payment_gateway_pay_button" 
+            disabled={isPayNowDisabled} // Disable if form is incomplete
+          >
+            Pay now
+          </button>
+        </form>
+      </div>
+
+      <div className="payment_gateway-right">
+      <div className="order_summary">
+        <h2 className="order_heading">Order Summary</h2>
+          {cartItems.map((item) => (
+            <div key={`${item.productId}-${item.selectedWeight}`} className="order_item">
+              <p className="order_content">{item.productName} - {item.selectedWeight}g ({item.quantity})</p>
+              <p className="order_item_p">₹{isNaN(Number(item.price)) ? '0.00' : Number(item.price).toFixed(2)}</p>
+            </div>
+          ))}
+        < div className="order_total">
+            <p>Subtotal</p>
+            <p className="order_total_p">₹{subtotal.toFixed(2)}</p>
+          </div>
+          <div className="order_shipping">
+            <p>Delivery Charges:</p>
+            <p className="order_shipping_p">₹{shipping.toFixed(2)}</p>
+          </div>
+         <div className="order_grand_total">
+            <p>Total Amount:</p>
+            <p className="order_grand_total_p">₹{totalAmount.toFixed(2)}</p>
+          </div>
+      </div>
+    </div>
+  </div>
+  );
 };
 
 export default CheckoutProcess;

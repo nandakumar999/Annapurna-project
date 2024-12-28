@@ -4,10 +4,30 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+if (process.env.NODE_ENV === 'production') {
+  // Disable Inspect Element and Console Logs
+  document.addEventListener("contextmenu", (event) => event.preventDefault());
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "F12" ||
+      (event.ctrlKey && event.shiftKey && ["I", "C", "J", "U"].includes(event.key))
+    ) {
+      event.preventDefault();
+    }
+  });
+ 
+  // Disable console globally
+  console.log = function () {};
+  console.error = function () {};
+  console.warn = function () {};
+}
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <App />
   </React.StrictMode>
 );
 

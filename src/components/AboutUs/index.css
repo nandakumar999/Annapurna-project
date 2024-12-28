@@ -1,0 +1,718 @@
+/* Carousel Container */
+.portfolio-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1052px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 80px;
+  margin-top: -10px;
+  margin-left: -3px;
+}
+
+/* Carousel Image */
+.portfolio-carousel-image {
+  width: 100%;
+  height: 550px;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Arrow Buttons */
+.slider-arrow {
+  position: absolute;
+  top: 103%;
+  transform: translateY(-50%);
+  background-color:#000;
+  color: #fff;
+  border: none;
+  border-radius: 0%;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  height: auto;
+}
+
+.slider-arrow:hover {
+  background-color:#ffc801;
+}
+
+/* Left Arrow */
+.slider-arrow-left {
+  left: 0px;
+}
+
+/* Right Arrow */
+.slider-arrow-right {
+  right: 1024px;
+}
+
+
+.carousel-heading_99 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0px 29px;
+  text-align: start;
+  margin-left: 0px;
+
+}
+
+/* Subheading in Overlay */
+.carousel-subheading_99 {
+  font-size: 1rem;
+  margin: 5px 0;
+  margin-top: 12px;
+  margin-right: 234px;
+}
+
+
+.carousel-overlay_00 {
+  position: absolute;
+  top: 416px;
+  left: 752px;
+  width: 26%;
+  height: 29%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  color: white;
+  background: #000;
+  padding: 13px;
+  text-align: start;
+}
+
+.about-section {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.about-section-containers {
+  width: 100%;
+  height: 60vh; /* Adjust the height of the carousel image */
+} 
+
+.about-section-carousel-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.about-section-carousel-content {
+  padding:65px;
+  border-radius: 10px;
+  text-align: justify; 
+  display: block; 
+  width: 100%; 
+  box-sizing: border-box; 
+  /* height: 5em;  */
+  line-height: 2.9em; 
+  overflow: hidden; 
+  white-space: normal; 
+}
+
+/* .about-section-carousel-heading {
+  font-weight: bolder !important;
+  line-height: 47px;
+  font-size: 2.3rem;
+} */
+
+.full-width-image {
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.full-width-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Creates 12 equal columns */
+  gap: 20px; /* Gap between columns */
+  align-items: center; /* Vertically centers content */
+  margin-bottom: 40px; 
+  margin-top: 40px;
+}
+
+.content-image {
+  grid-column: span 5;
+  padding-top: 40px;
+  width: 100%; 
+  height: auto; /* Maintains aspect ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.about_img {
+  width: 100%; 
+  height: auto; 
+  max-width: 650px;
+}
+
+.content-text-about {
+  grid-column: span 6 !important; /* Makes the text section take up 6 columns */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 50px;
+  text-align: start;
+}
+
+
+
+.name {
+  font-size: 12px;
+  /* font-weight: bold; */
+  color: #6e787e; /* Color for the name */
+  margin-bottom: 0px;
+  /* font-weight: 500; */
+  /* text-align: start; */
+}
+
+
+
+
+
+.content-heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0px;
+  /* text-align: start; */
+}
+
+
+
+.content-text-para {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #7c6868;
+  margin-bottom: 2px;
+  text-align: justify; /* Justify the paragraph text */
+  margin-bottom: 20px; /* Add some space after the paragraph */
+  padding-right: 75px;
+}
+
+
+
+
+
+.read_more_button {
+  padding: 10px 35px;
+  font-size: 16px;
+  background-color: #fff; /* Adjust to your theme color */
+  color: #75b464;
+  border: 1px solid #75b464;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* display: inline-block; */
+  margin: 0; 
+  /* text-align: left; */
+}
+
+
+
+.read_more_button:hover {
+  background-color: #75b464; 
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+.about-grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Create 12 equal-width columns */
+  gap: 5px; /* Space between grid items */
+  max-width: 1200px; 
+  padding: 0px 20px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+
+
+.about-numbers-heading {
+  font-size: 15px;
+  color: #7c6868;
+  text-align: justify;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+
+
+
+
+.about-grid-item-start span {
+  font-size: 12px;
+  color: #6e787e; /* Adjust color */
+  /* font-weight: bold; */
+  text-align: start;
+}
+
+
+
+.about-grid-item-start {
+  grid-column: span 5; 
+  text-align: start;
+  padding-left: 50px;
+}
+.about-grid-item-one,
+.about-grid-item-two {
+  grid-column: span 3; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.about-grid-item-one {
+  border-right: 1px solid #ccc; /* Vertical line between the items */
+  /* padding-right: 20px;&nbsp; */
+}
+
+
+
+.about-grid-item-two {
+  /* border-right: 1px solid #ccc; Vertical line between the items */
+  padding-left: 0px;
+}
+
+
+
+.about-grid-item-heading {
+  font-size: 42px;
+  color: #333;
+  margin-bottom: 0px;
+  text-align: justify;
+  font-weight: bolder;
+}
+
+
+
+.about-grid-item-para {
+  font-size: 12px;
+  color: #666;
+  margin-top: 0px;
+  font-weight: 500;
+}
+
+
+
+.our-clients-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-column layout */
+  gap: 5px; /* Adjust spacing between grid items */
+  max-width: 1200px; /* Control max width */
+  padding: 0 20px; /* Padding for left and right space */
+  margin: 0 auto; /* Center the container */
+  /* margin-top: 30px; */
+  padding-top: 60px;
+}
+
+
+
+.Inner-our-clients-container {
+  grid-column: span 6; /* Full-width on the heading section */
+  text-align: center;
+  padding-left: 50px;
+}
+
+
+
+.clients-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+
+
+.clients-worked {
+  grid-column: span 5; /* Adjust to cover 6 columns */
+  text-align: start;
+  font-size: 16px;
+  color: #555;
+}
+
+
+
+.clients-worked span {
+  font-size: 12px;
+  color: #6e787e; /* Adjust color */
+  /* font-weight: bold; */
+  /* display: block;
+  margin-bottom: 0px; */
+}
+
+
+
+.clients-worked p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  /* margin-top: 6px; */
+  padding-right: 14px;
+
+
+
+}
+
+
+
+.clients-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns per row */
+  gap: 15px;
+  padding-right: 35px;
+  max-width: 1100px; /* Limit the width */
+  margin: 0 auto; /* Center align the gallery */
+}
+
+
+
+.client-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #ccc; Optional border */
+  /* border-radius: 8px; Rounded corners */
+  overflow: hidden; /* Keep image within rounded border */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Add a subtle shadow */
+}
+
+
+
+.client-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image fills the container */
+}
+
+
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-column layout for flexibility */
+  gap: 5px;
+  max-width: 1200px;
+  padding: 0px 20px; /* Top/bottom padding with side spacing */
+  margin: 0 auto;
+  /* margin-top: 30px; */
+  padding-top:115px;
+}
+
+
+
+.portfolio-container-first {
+  grid-column: span 5; 
+  text-align: justify;
+  font-size: 14px;
+  color: #7c6868;
+  line-height: 1.5;
+  padding-left: 50px;
+}
+.portfolio-container-para {
+  font-size: 15px;
+  color: #7c6868;
+  text-align: justify;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+
+
+.Our-portfolio-container-one {
+  grid-column: span 6; /* Span remaining 6 columns */
+  text-align: start;
+  padding-left: 50px;
+}
+
+
+
+.Our-portfolio-container-one span {
+  font-size: 12px;
+  color: #6e787e;
+  /* font-weight: bold; */
+  text-align: start;
+}
+
+
+
+.our-protfolio-heading2 {
+  font-size: 24px;
+  color: #333;
+  margin-top: 6px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+
+
+.portfolio-carousel-container {
+  grid-template-columns: repeat(12, 1fr); /* 12-column layout for flexibility */
+  gap: 5px;
+  max-width: 1100px;
+  padding: 0px 20px; 
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.carousel-description_99{
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 21px;
+}
+
+
+/* Base Styles (Mobile-First) */
+
+/* Existing CSS as is for mobile (default styles) */
+
+/* Responsive Design */
+
+
+/* Small Devices (Phones) */
+@media (max-width: 480px) {
+      .portfolio-carousel {
+        margin-left: 0;
+      }
+
+      .portfolio-carousel-image {
+        height: 200px;
+      }
+
+      .carousel-overlay_00 {
+        width: 47%;
+        height: 68%;
+        top: 48%;
+        left: 72%;
+        transform: translateX(-50%);
+      }
+        .carousel-heading_99 {
+          font-size: 14px;
+          font-weight: bold;
+          margin: 0px 0;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+      }
+      .carousel-subheading_99 {
+        font-size: 12px;
+        /* margin: 1px 0; */
+        /* margin-top: 6px; */
+        margin-right:115px;
+      }
+
+      .carousel-description_99 {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 15px;
+     }
+      .content-section {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 10px;
+      }
+      .Inner-our-clients-container {
+        grid-column: span 6;
+        text-align: center;
+        padding-left: 0px;
+    }
+      .content-text-about {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .about_img {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .about-grid-container {
+        grid-template-columns: 1fr;
+      }
+
+      .clients-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 10px;
+      }
+
+      .read_more_button {
+        padding: 8px 20px;
+        font-size: 14px;
+      }
+      .content-text-para {
+        font-size: 15px;
+        line-height: 1.5;
+        color: #7c6868;
+        /* margin-bottom: 2px; */
+        text-align: justify;
+        margin-bottom: 20px;
+        padding-right:0px;
+    }
+    .about-grid-item-start {
+      grid-column: span 5;
+      text-align: start;
+      padding-left: 0px;
+    }
+    .portfolio-container {
+      display: flow;
+      margin-top: -100px;
+    }
+    .portfolio-container-first {
+      padding-left: 0px;
+    }
+    .Our-portfolio-container-one{
+      padding-left: 0px;
+    }
+    .our-clients-container {
+      display: flex;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 5px;
+      max-width: 1200px;
+      padding: 0 20px;
+      margin: 0 auto;
+      margin-top: 30px;
+      padding-top: 60px;
+      flex-direction: column;
+    }
+    .slider-arrow-right {
+      right: 254px;
+    }
+    .slider-arrow {
+      top: 108%;
+    }
+    .about-section-containers {
+      height: 40vh; /* Adjust carousel height for mobile */
+    }
+    .about-section-carousel-content {
+      padding: 15px;
+      font-size: 8px;
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .portfolio-carousel-image {
+    height: 400px;
+  }
+
+  .carousel-overlay_00 {
+    width: 33%;
+    height: 35%;
+    top: 67%;
+    left: 82%;
+    transform: translateX(-50%);
+  }
+  .carousel-subheading_99 {
+    font-size: 1rem;
+    margin: 1px 0;
+    margin-top: 6px;
+    margin-right: 103px;
+}
+
+  .content-section {
+    grid-template-columns: 1fr 1fr; /* Two columns */
+  }
+
+  .clients-gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  }
+
+  .about-grid-item-one, .about-grid-item-two {
+    grid-column: span 6; /* Full width of grid */
+  }
+
+  .read_more_button {
+    padding: 10px 30px;
+    font-size: 15px;
+  }
+  .slider-arrow-right {
+    right: 90%;
+  }
+  .slider-arrow {
+    top: 104%
+  }
+  .about-section-containers {
+    height: 50vh; /* Adjust carousel height for tablet */
+  }
+  .about-section-carousel-content {
+    padding: 30px;
+    font-size: 1rem;
+  }
+}
+
+/* Large Devices (Laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .portfolio-carousel-image {
+    height: 500px;
+  }
+
+  .content-section {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .content-image {
+    grid-column: span 6; /* Wider image */
+  }
+
+  .clients-gallery {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
+  }
+  .about-section-containers {
+    height: 60vh; /* Keep carousel height for larger screens */
+  }
+
+  .about-section-carousel-content {
+    padding: 65px;
+    font-size: 1.2rem;
+  }
+
+}
+
+/* Extra Large Devices (Desktops) */
+@media (min-width: 1025px) {
+  .portfolio-carousel {
+    max-width: 1100px;
+  }
+
+  .portfolio-carousel-image {
+    height: 550px;
+    max-width: 1064px;
+    margin-right: 37px;
+  }
+
+  .clients-gallery {
+    grid-template-columns: repeat(4, 1fr); /* 5 columns */
+    gap: 30px;
+  }
+
+  .content-text-about {
+    padding-left: 60px;
+  }
+}

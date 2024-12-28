@@ -1,116 +1,160 @@
+/* Footer Styles */
 .footer {
-    /* background: url('./your-background-image.jpg') no-repeat center center;  */
-    background-size: cover; /* Adjust background size */
-    color: white; /* Text color */
-    padding: 40px 20px;
-    background-color: #a66bb9;
-    text-align: justify;
-    position: relative;
-    z-index: 1;
-  
-  }
-  
+  background-color: #f7f7f7;
+  color: #000000;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+ 
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  /* border-bottom: 1px solid #555; */
+  margin-bottom: 20px;
+}
+ 
+.footer-search-bar {
+  width: 31%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background-color: #eae2e2;
+  margin-left: 39px;
+  height: 31px;
+}
+ 
+.footer-help-link {
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+  text-decoration-line: none;
+  margin-top: 29px;
+  margin-right: 55px;
+  font-weight: 600;
+}
+ 
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 60px;
+  padding: 8px 22px;
+}
+.footer-bottom{
+  color: #000;
+}
+ 
+.footer-section,
+.footer-links {
+  text-align: left;
+  margin-left: 31px;
+}
+ 
+.footer-logo-image {
+  max-width: 214px;
+  margin-left: -22px;
+}
+ 
+.footer-company-info {
+  font-size: 0.9rem;
+  color: #116b46;
+  margin-bottom: 10px;
+}
+ 
+.footer-links h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.footer-mail {
+  font-size: 14px;
+}
+.here_click{
+  font-size: 16px;
+  font-weight: 600;
+  color: #2dc14b;
+  margin-top: 6px;
+}
+ 
+ 
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+  line-height: 25px;
+}
+ 
+.footer-links ul li {
+  margin: 5px 0;
+}
+ 
+.footer-links ul li a {
+  color: #7e7474;
+  text-decoration: none;
+}
+ 
+.footer-links ul li a:hover {
+  color: #7e7474;
+  font-weight: 700;
+}
+ 
+.footer-social-icons a {
+  color: #bbb;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+ 
+.footer-social-icons a:hover {
+  color: #000000;
+}
+ 
+.footer-bottom {
+  border-top: 2px solid #7b666617;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+
+.footer-all-rights {
+  color: #000;
+  font-weight: bolder;
+}
+ 
+/* Responsive Design */
+@media (max-width: 992px) {
   .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  .footer-logo {
-    flex: 1;
-    text-align: center;
+}
+ 
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .footer-logo-image {
-    width: 278px; /* Adjust logo size */
+ 
+  .footer-search-bar {
+    width: 90%;
+    margin-bottom: 9px;
+    margin-right: 30px;
   }
-  
-  .footer-social-icons {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+}
+ 
+@media (max-width: 576px) {
+  .footer-container {
+    grid-template-columns: 1fr;
   }
-  
-  .footer-social-icons svg {
-    margin: 0 10px;
-    font-size: 20px;
-    color: white; /* Social icon color */
-    cursor: pointer;
-    transition: color 0.3s;
+ 
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .footer-social-icons svg:hover {
-    color: #700e50; /* Change color on hover */
-  }
-  
-  .footer-links {
-    flex: 1;
-    padding: 0 20px;
-  }
-  
-  .footer-links h4 {
-    margin-bottom: 10px;
-  }
-  
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-links ul li {
-    margin-bottom: 8px;
-  }
-  
-  .footer-links ul li a {
-    color: white; /* Link color */
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-links ul li a:hover {
-    color: #700e50; /* Change link color on hover */
-  }
-  
-  .footer-subscribe {
-    flex: 1;
-    text-align: justify;
-  }
-  
-  .subscribe-input {
-    padding: 10px;
-    width: 70%;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .subscribe-button {
-    background-color: #59186e;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .subscribe-button:hover {
-    background-color: #700e50;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    border-top: 1px solid #ccc;
-  }
-  
-  /* Footer does not overlap or float over other content */
-.footer {
-  clear: both; /* Ensures footer does not overlap with floating elements */
-  width: 100%; /* Footer spans the entire width */
-  position: relative;
-  bottom: 0; /* Stick to the bottom */
-  left: 0;
+ 
+  .footer-help-link {
+    margin-top: 15px;
+    margin-left: 52px;
+    }
+ 
+  .footer-container {
+    gap: 0px;
+    padding: 8px 13px;}
 }

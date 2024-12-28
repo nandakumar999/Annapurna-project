@@ -1,0 +1,156 @@
+/* Order Success Container */
+.order-success-container {
+  position: relative; 
+  background-image: url('../../../public/img/ordersuccess_pic.jpg'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70vh; 
+  padding: 20px;
+}
+
+.order-success-container::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 1; 
+}
+
+/* Order Success Card */
+.order-success-card {
+  text-align: center;
+  position: relative;
+  z-index: 2; 
+}
+
+/* Success Message */
+.order-success-message {
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Order Info */
+.order-info {
+  font-size: 35px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: -25px;
+}
+
+.order-info-1 {
+  font-size: 21px;
+  color: #fff;
+  margin-top: -29px;
+}
+
+/* Button Styling */
+.order-success-back-button {
+  font-size: 1.1rem;
+  padding: 0;
+  background: none;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.order-success-back-button:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+
+/* For tablets and smaller devices */
+@media screen and (max-width: 1024px) {
+  .order-success-message {
+    font-size: 36px;
+  }
+
+  .order-info {
+    font-size: 36px;
+  }
+
+  .order-info-1 {
+    font-size: 18px;
+  }
+
+  .order-success-back-button {
+    font-size: 1rem;
+  }
+
+  .order-success-container {
+    height: 80vh; 
+  }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 768px) {
+  .order-success-message {
+    font-size: 30px;
+  }
+
+  .order-info {
+      font-size: 26px;
+      margin-bottom: 32px;
+      margin-top: -21px;
+  }
+
+  .order-info-1 {
+    font-size: 16px;
+  }
+
+  .order-success-back-button {
+    font-size: 0.9rem;
+  }
+
+  .order-success-container {
+    height: 85vh; 
+  }
+
+  .order-success-card {
+    padding: 20px;
+  }
+}
+
+/* For extra small mobile devices */
+@media screen and (max-width: 480px) {
+  .order-success-message {
+    font-size: 21px;
+  }
+
+  .order-info {
+      font-size: 15px;
+      font-weight:500;
+      margin-top: -9px;
+      margin-bottom: 35px;
+  }
+
+  .order-info-1 {
+    font-size: 13px;
+  }
+
+  .order-success-back-button {
+    font-size:14px;
+    padding: 10px 20px;
+  }
+
+  .order-success-container {
+    height:75vh;
+  }
+
+  .order-success-card {
+      padding: 0px;
+      text-align: center;
+      margin-left: -38px;    }
+}

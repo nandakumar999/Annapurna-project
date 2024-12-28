@@ -1,0 +1,204 @@
+/* Main Styles */
+.category-section {
+  text-align: center;
+  padding: 40px 68px;
+  background-color: #fff;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 120px;
+  background-color: rgba(240, 163, 47, 0.8); 
+  padding: 10px;
+  color: #ffffff;
+  width: 278px;
+}
+.category-title_111{
+  font-size: 35px;
+  margin-bottom: 40px;
+  text-align: start;
+}
+
+
+.home-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-cards-container {
+  display: flex;
+  overflow: hidden;
+  gap: 20px;
+  width: 100%;
+}
+
+.category-card {
+  position: relative;
+  /* flex: 1 1 200px; */
+  height: 50%; /* Sets the card height to 50% of the parent container */
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Apply transition to the entire card */
+}
+
+.category-card:hover .card-image {
+  transform: scale(1.1); 
+}
+.card-image {
+  transition: transform 0.3s ease-in-out; 
+}
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease; 
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+
+.home-slider-arrow {
+  width: 40px;
+  height: 40px;
+  background-color: #75b464;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  /* transform: translateY(-50%); */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; 
+}
+
+
+.home-left-arrow {
+  left: -19px;
+  top: 60px;
+  color: #fff;
+}
+
+.home-right-arrow {
+  right: -20px;
+  top: 60px;
+  color: #fff;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+/* Responsive adjustments for arrow size */
+/* Tablet View (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .category-section {
+    padding: 30px 48px;
+  }
+  .category-title {
+    font-size: 1.8rem;
+  }
+  .home-slider-arrow {
+    width: 35px;
+    height: 35px;
+  }
+  .home-left-arrow {
+    left: -20px;
+  }
+  .home-right-arrow {
+    right: -15px;
+  }
+}
+
+/* Smaller Tablet View (max-width: 768px) */
+@media (max-width: 768px) {
+  .category-section {
+    padding: 20px 32px;
+  }
+  .category-title {
+    font-size: 1.6rem;
+  }
+  .category-card {
+    flex: 1 1 45%; /* Displays two cards per row */
+    height: 150px;
+  }
+  .home-slider-arrow {
+    width: 30px;
+    height: 30px;
+  }
+  .home-left-arrow {
+    left: -30px;
+  }
+  .home-right-arrow {
+    right: -16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-card {
+    flex: 1 1 45%; /* Allows two cards per row */
+    height: 150px;
+  }
+}
+
+/* Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Show only one card at a time with smooth sliding */
+  .category-cards-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory; /* Enables snap scrolling */
+    gap: 0;
+    scroll-behavior: smooth; /* Smooth sliding */
+    -webkit-overflow-scrolling: touch; /* Improves touch experience on iOS */
+  }
+
+  .category-card {
+    flex: 0 0 100%; /* Each card takes up the full width */
+    height: 250px; /* Adjust height to fit mobile view */
+    scroll-snap-align: center; /* Aligns each card to center on scroll */
+    transition: transform 0.3s ease;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Adjust Arrow Size and Positioning for Mobile */
+  .home-slider-arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .home-left-arrow {
+    left: -30px;
+  }
+  .home-right-arrow {
+    right: -15px; 
+   }
+
+   .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 225px;
+}
+}

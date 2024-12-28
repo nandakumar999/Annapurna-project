@@ -1,0 +1,342 @@
+/* General styles for the table */
+.order-details-container_040 {
+  padding: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.order_details_name_040 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+.order-details-table_040 {
+  width: 1085px;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.table-header_040 {
+  background-color: #4CAF50;
+  text-align: left;
+  font-weight: bold;
+  color: #fff;
+}
+
+.table-header-cell_040,
+.order-details-cell_040 {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.order-details-row_040 {
+  background-color: #fff;
+}
+
+.custom-checkbox_040 {
+  transform: scale(1.2);
+  margin: 0;
+}
+
+.cancel-button_040 {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.cancel-button_040:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.submit-container_040 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button_040 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button_040:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Media Queries */
+
+/* For tablets in landscape mode and larger screens (min-width: 769px and max-width: 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .order-details-table_040 {
+    width: 760px;
+    overflow-x: visible;
+    table-layout: fixed;
+  }
+
+  .order-details-container_040 {
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .order_details_name_040 {
+    font-size: 22px; /* Keep the title size for readability */
+  }
+
+  .table-header-cell_040,
+  .order-details-cell_040 {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .order-details-cell_040 {
+    font-size: 12px; /* Set font size for the table cells */
+  }
+
+  /* Styling for the header */
+  .table-header_040 {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Cancel and Submit buttons */
+  .cancel-button_040,
+  .submit-button_040 {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-left: -8px;
+  }
+
+  /* Adjust submit container */
+  .submit-container_040 {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+  }
+  .custom-checkbox_040 {
+    margin-left: 22px;
+    margin-bottom: 7px;
+  }
+  .submit-button_040:disabled{
+    margin-right: -8px;
+  }
+}
+
+
+/* For tablets in portrait mode and smaller devices (min-width: 481px and max-width: 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .order-details-table_040 {
+    display: block; /* Make the table scrollable horizontally */
+    width: 100%;
+    overflow-x: auto; /* Allow horizontal scrolling on smaller screens */
+    border-collapse: collapse;
+  }
+
+  .order-details-container_040 {
+    padding: 0px;
+    margin-left: 25px;
+    margin-top: 40px;
+  }
+
+  /* Table Header Styling */
+  .table-header_040 {
+    background-color: #4CAF50;
+    text-align: left;
+    font-weight: bold;
+    color: white;
+  }
+
+  .table-header-cell_040,
+  .order-details-cell_040 {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd; /* Add border to both header and cells */
+  }
+
+  .order-details-cell_040 {
+    text-align: left;
+    display: table-cell; /* Maintain table structure */
+  }
+
+  /* Ensure table rows have borders */
+  .order-details-row_040 {
+    background-color: #fff;
+    display: table-row;
+    border: 1px solid #ddd; /* Add borders between rows */
+  }
+
+  /* Adjust header and data cell text alignment */
+  .order-details-cell_040:nth-child(1),
+  .order-details-cell_040:nth-child(2) {
+    text-align: left;
+  }
+
+  /* Adjust for data cells with different content */
+  .order-details-cell_040:nth-child(3),
+  .order-details-cell_040:nth-child(4),
+  .order-details-cell_040:nth-child(5),
+  .order-details-cell_040:nth-child(6) {
+    text-align: center;
+  }
+
+  /* Mobile-specific formatting for responsive labels */
+  .order-details-cell_040::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* Submit and Cancel Button Styling */
+  .submit-container_040 {
+    justify-content: flex-end;
+  }
+
+  .order_details_name_040 {
+    font-size: 20px;
+  }
+
+  .cancel-button_040,
+  .submit-button_040 {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .order-details-cell_040 {
+    font-size: 14px;
+  }
+
+  /* Responsive adjustments for tablet screen size */
+  .order-details-table_040 {
+    width: 100%;
+    overflow-x: auto; /* Make the table scrollable horizontally */
+  }
+
+  .table-header-cell_040,
+  .order-details-cell_040 {
+    text-align: left;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+  }
+
+  .submit-container_040 {
+    justify-content: flex-end;
+  }
+
+  /* Adjust the cancel and submit button styles for tablet */
+  .cancel-button_040,
+  .submit-button_040 {
+    font-size: 14px;
+    margin-left: 0px;
+  }
+  .custom-checkbox_040 {
+    margin-left: 28px;
+    margin-bottom: 7px;
+  }
+}
+
+
+/* For mobile devices (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  .order-details-container_040 {
+    padding: 0px;
+    margin-left: 20px;
+    margin-top: 35px;
+  }
+
+  .order_details_name_040 {
+    font-size: 18px;
+  }
+
+  .order-details-table_040 {
+    display: block; /* Allow horizontal scrolling */
+    width: 100%;
+    overflow-x: auto; /* Make the table scrollable horizontally */
+    border-collapse: collapse; /* Ensure borders between table rows and columns */
+  }
+
+  /* Table header */
+  .table-header_040 {
+    background-color: #4CAF50;
+    text-align: left;
+    font-weight: bold;
+    color: white;
+  }
+
+  .table-header-cell_040,
+  .order-details-cell_040 {
+    padding: 8px;
+    font-size: 13px;
+    border: 1px solid #ddd; /* Set border for both header and cells */
+  }
+
+  /* Ensure table rows are visible and borders are set */
+  .order-details-row_040 {
+    background-color: #fff;
+    border: 1px solid #ddd; /* Add border to each row */
+  }
+
+  /* Align text to the left for readability on mobile */
+  .order-details-cell_040 {
+    text-align: left;
+    display: table-cell; /* Keep the table format */
+  }
+
+  /* Ensure submit button is aligned */
+  .submit-container_040 {
+    justify-content: flex-end;
+  }
+
+  /* Button font size adjustments */
+  .cancel-button_040,
+  .submit-button_040 {
+    font-size: 12px;
+  }
+
+  /* For data in table cells */
+  .order-details-cell_040 {
+    font-size: 12px;
+  }
+
+  /* Additional adjustments for buttons and layout */
+  .cancel-button_040,
+  .submit-button_040 {
+    padding: 5px 10px;
+    margin-left: 0px;
+  }
+
+  .order-details-row_040 {
+    display: table-row;
+  }
+
+  .order-details-cell_040:nth-child(1),
+  .order-details-cell_040:nth-child(2) {
+    text-align: left;
+  }
+
+  /* Ensure the header text is not overlapping */
+  .table-header-cell_040 {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .custom-checkbox_040 {
+    margin-left: 24px;
+    margin-bottom: 7px;
+  }
+}

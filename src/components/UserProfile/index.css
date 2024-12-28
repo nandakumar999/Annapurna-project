@@ -1,0 +1,401 @@
+.profile-container {
+    background-color: #fff;
+}
+
+.profile-banner {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}
+
+.profile-inside-container {
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px; 
+    padding-right: 15px; 
+    width: 100%;  
+    padding-bottom: 15px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.profile-avatar {
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ddd; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f0f0f0; 
+    margin-top: 20px;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+.profile-info {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profile-email {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 0px;
+}
+
+
+.profile-tabs .tab-list {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.profile-tabs .tab-item {
+    margin-right: 20px;
+}
+
+.profile-tabs .tab-link {
+    font-size: 1rem;
+    font-weight: bold;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.profile-tabs .active-tab {
+    color: #258a1c;
+    border-bottom: 2px solid #258a1c;
+    padding-bottom: 12px;
+}
+
+.user-profile-content {
+    padding: 0px;  
+    border-radius: 8px;  
+    margin-top: 20px;
+}
+
+.profile-form {
+    margin-top: 15px;
+}
+
+/* Form styling */
+.profile-form .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.profile-form .form-group {
+    flex: 1 1 45%;
+    margin-right: 10%;
+    text-align: start;
+}
+
+.profile-form .form-group:last-child {
+    margin-right: 0;
+}
+
+.profile-form .form-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.profile-form .form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.form-control:focus {
+    border: 2px solid #258a1c;  
+    outline: none;  
+}
+
+textarea.form-control {
+    resize: vertical;  /* Allows vertical resizing */
+}
+
+.profile-form .btn-submit,
+.profile-form .btn-cancel {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile-form .btn-submit {
+    background-color: #258a1c;
+    color: white;
+    border: none;
+}
+
+.profile-form .btn-cancel {
+    background-color: #e33a3a;
+    color: #ffffff;
+    border: none;
+}
+
+.change-profile-form {
+    padding: 20px; 
+    border-radius: 8px;
+    margin-top: 0px;
+}
+
+
+.change-password-form {
+    margin-bottom: 20px;
+    text-align: start;
+}
+
+
+.change-form-label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+
+.change-form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.change-form-control:focus {
+    border: 2px solid #258a1c;  
+    outline: none;
+}
+
+
+.change-btn-submit,
+.change-btn-cancel {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 5px;
+}
+
+
+.change-btn-submit {
+    background-color: #28a745;  
+    color: white;
+}
+
+.change-btn-submit:hover {
+    background-color: #218838;
+}
+
+
+.change-btn-cancel {
+    background-color: #dc3545;
+    color: white;
+}
+
+.change-btn-cancel:hover {
+    background-color: #c82333; 
+}
+
+
+.change-password-form-buttons {
+    display: flex;
+    justify-content: center; 
+    gap: 10px;  
+    margin-top: 20px;
+    margin-right: 240px;
+}
+
+
+.password-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 15px;
+    top: 63%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.eye-icon:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .profile-avatar {
+        margin-bottom: 10px;
+    }
+
+    .profile-info {
+        margin-left: 0;
+    }
+
+    .profile-tabs .tab-list {
+        flex-direction: row;
+    }
+
+    .profile-tabs .tab-item {
+        margin-bottom: 10px;
+    }
+
+    .profile-form .form-row {
+        flex-direction: column;
+    }
+
+    .profile-form .form-group {
+        flex: 1 1 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .profile-form .form-actions {
+        justify-content: center;
+        text-align: center;
+    }
+    .change-password-form-buttons {
+        margin-right: 0px;
+    }
+}
+
+/* Larger screens, e.g. tablets and up (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 960px; /* Set max-width to prevent too much whitespace on large screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-banner {
+        height: 150px;
+    }
+
+    .profile-name {
+        font-size: 1.2rem;
+    }
+
+    .profile-email {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-inside-container {
+        width: 100%; 
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .profile-form {
+        padding: 0px;
+        padding-right: 20px
+    }
+    .change-profile-form {
+        padding: 0px;  
+        padding-right: 20px;
+    }
+
+    .change-password-form {
+        width: 100%;  
+    }
+
+    .change-btn-submit,
+    .change-btn-cancel {
+        width: 100%;  
+        font-size: 18px;  
+    }
+}
+
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .profile-inside-container {
+        width: 90%; 
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .profile-inside-container {
+        width: 1140px;
+    }
+    .change-profile-form {
+        padding: 0px;
+    }
+
+    .change-password-form {
+        width: 48%;  
+    }
+}
+
+
+/* @media (min-width: 1200px) {
+   
+} */
+
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .change-password-form {
+        width: 100%;  
+    }
+
+    .change-profile-form {
+        padding: 0px;
+    }
+}
+
+
+/* @media (max-width: 767px) {
+   
+} */

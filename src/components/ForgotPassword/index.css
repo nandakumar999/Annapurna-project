@@ -1,0 +1,349 @@
+.Forgot-container {
+  background-image: url("../../../public/img/login_Register_banner.jpg"); /* Corrected path */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  overflow: hidden; 
+  height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.Forgot-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+  gap: 20px; /* Space between columns */
+  width: 100%;
+}
+
+.Forgot-top-wrapper-left-side {
+  grid-column: span 5; /* Occupies 5 out of 12 columns */
+  padding: 50px;
+  padding-bottom: 120px;
+}
+
+.Forgot-text-content-right-side {
+  grid-column: span 6;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 90px;
+  padding-bottom: 120px;
+}
+
+.Forgot-form-wrapper {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 40px 28px;
+  margin: 0 auto;
+}
+
+.Forgot-logo-container {
+  margin-left: -24px;
+  text-align: start;
+}
+
+.Forgot-form-logo {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+}
+
+.Forgot-title {
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: start;
+}
+
+.Forgot-password-para {
+  text-align: start;
+  margin-bottom: 30px;
+  color: #ccc;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+.Forgot-group {
+  position: relative;
+  margin-bottom: 29px;
+  width: 100%;
+}
+
+.Forgot-name-input {
+  font-size: 18px;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+}
+
+.Forgot-name-input:focus {
+  outline: none;
+}
+
+.Forgot-label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+.Forgot-name-input:focus ~ .Forgot-label,
+.Forgot-name-input:valid ~ .Forgot-label {
+  top: -10px;
+  font-size: 14px;
+  color: #5264ae;
+  left: 0;
+}
+
+.Forgot-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.Forgot-bar:before,
+.Forgot-bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #25542b;
+  transition: 0.2s ease all;
+}
+
+.Forgot-bar:before {
+  left: 50%;
+}
+
+.Forgot-bar:after {
+  right: 50%;
+}
+
+.Forgot-name-input:focus ~ .Forgot-bar:before,
+.Forgot-name-input:focus ~ .Forgot-bar:after {
+  width: 50%;
+}
+
+.Forgot-highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.Forgot-name-input:focus ~ .Forgot-highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+  from {
+      background: #25542b;
+  }
+  to {
+      width: 0;
+      background: transparent;
+  }
+}
+
+.Forgot-account {
+  width: 100%;
+  padding: 15px;
+  background: #25542b;
+  color: #fff;
+  font-size: 18px;
+  border: 0;
+  border-radius: 15px;
+  font-weight: 500;
+  margin: 21px 0;
+}
+
+.Forgot-account:hover {
+  background-color: #034e1d;
+}
+
+/* Right-side text content */
+.Forgot-text-content-right-side h1 {
+  font-size: 50px;
+  font-weight: 700;
+  text-align: start;
+}
+
+.Forgot-text-content-right-side p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+  text-align: start;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+}
+
+.eye-icon:hover {
+  color: #5264ae;
+}
+
+.forget_timer_resend{
+  display: flex;
+  gap: 44%;
+  margin-top: -31px;
+}
+.Forgot_resend_button{
+  background-color: #ffffff;
+  border: none;
+  font-size: 14px;
+}
+.forget_timer_0{
+  
+}
+/* Media Queries */
+@media screen and (max-width: 468px) {
+  .Forgot-form-wrapper {
+      width: 70%;
+      padding: 15px 43px 28px;
+  }
+
+  .Forgot-label {
+      font-size: 16px;
+  }
+
+  .Forgot-account {
+      padding: 12px;
+      font-size: 16px;
+  }
+
+  .Forgot-logo-container {
+      margin-bottom: 20px;
+  }
+}
+
+/* Mobile - Screens up to 767px */
+@media (max-width: 767px) {
+  .Forgot-grid {
+      grid-template-columns: 1fr; /* Full-width columns for mobile */
+  }
+
+  .Forgot-top-wrapper-left-side, .Forgot-text-content-right-side {
+      grid-column: span 12; /* Both sections span the full width */
+      padding: 20px;
+  }
+
+  .Forgot-text-content-right-side {
+      text-align: center;
+      display: none;
+  }
+
+  .Forgot-title {
+      font-size: 28px; /* Slightly smaller font on mobile */
+  }
+
+  .Forgot-account {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+  }
+
+  .Forgot-logo-container {
+      margin-bottom: 20px;
+  }
+}
+
+/* Tablet - Screens between 768px and 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Forgot-grid {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+  }
+
+  .Forgot-top-wrapper-left-side {
+      grid-column: span 6; /* 6 out of 12 columns */
+      padding-top: 120px;
+  }
+
+  .Forgot-text-content-right-side {
+      grid-column: span 6; /* 6 out of 12 columns */
+      padding-left: 50px;
+      padding-top: 80px;
+  }
+
+  .Forgot-title {
+      font-size: 32px; /* Adjusted for tablet view */
+  }
+
+  .Forgot-account {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+  }
+
+  .Forgot-text-content-right-side h1 {
+      font-size: 40px;
+  }
+
+  .Forgot-logo-container {
+      margin-bottom: -20px;
+  }
+}
+
+/* Desktop - Screens larger than 1024px */
+@media (min-width: 1025px) {
+  .Forgot-grid {
+      grid-template-columns: repeat(12, 1fr); /* 12-column grid */
+      gap: 30px;
+  }
+
+  .Forgot-top-wrapper-left-side {
+      grid-column: span 5;
+      padding-top: 160px;
+  }
+
+  .Forgot-text-content-right-side {
+      grid-column: span 6;
+      padding-top: 160px;
+  }
+
+  .Forgot-title {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: start;
+  }
+
+  .Forgot-logo-container {
+      margin-left: -24px;
+  }
+
+  .Forgot-account {
+      padding: 15px;
+      font-size: 18px;
+  }
+}

@@ -1,14 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
-import RegistrationForm from '../Registration';
+import SignUp from '../SignUp';
 import CheckoutProcess from '../CheckoutProcess';
  
 const Checkout = () => {
     const { user } = useContext(AuthContext);
- 
+    
+    useEffect(() => {
+        document.title = "Checkout - Annapurna Farms";
+     }, []);
+
     return (
         <div>
-            {user ? <CheckoutProcess /> : <RegistrationForm />}
+            {user ? <CheckoutProcess /> : <SignUp />}
         </div>
     );
 };

@@ -1,0 +1,45 @@
+
+.admin-profile {
+    max-width: 800px;
+    margin: 40px 35px;
+    padding: 20px;
+  }
+  
+
+  .admin-profile-heading {
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: start;
+  }
+  
+
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .admin-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff6347; 
+  }
+  
+  .loading {
+    color: #00bcd4; 
+  }

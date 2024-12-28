@@ -1,72 +1,397 @@
-/* Product Section */
-.product-list-section {
-  padding: 40px;
+.tabset-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  padding: 19px 0px;
+}
+ 
+/* Tab Section Title */
+.tabset-title {
+  padding-left: 62px;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+/* Tabset Layout */
+.tabset {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding-left: 62px;
+  margin-top: 14px;
+  gap: 5px;
+}
+ 
+ 
+/* Tab inputs (hidden) */
+.tabset input[type="radio"] {
+  display: none;
+}
+ 
+/* Tab labels (styled as buttons) */
+.tabset label {
+  display: inline-block; /* Allow labels to adjust to their content */
+  padding: 11px 28px; /* Add space inside the buttons */
+  cursor: pointer;
+  background-color: #ddd;
+  margin-right: 10px; /* Spacing between buttons */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: bold;
   text-align: center;
+  white-space: nowrap; /* Prevent text wrapping inside buttons */
+  /* margin-left: 53px; */
 }
 
-/* Title */
-.product-list-title {
-  font-size: 34px;
-  font-weight: bold;
-  margin: 28px 0px;
+.tabset input:checked + label {
+  background-color: #75b464;
+  color: white;
+  /* width: 85px;
+  height: 18px; */
+}
+ 
+/* Tab Panels */
+.tab-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px; /* Space between tabs and content */
+  justify-content: flex-start; /* Align cards to the left side */
+  align-items: center; /* Center content within the section */
+}
+ 
+/* Tab Panel */
+.tab-panel {
+  display: none;
+  width: 100%; /* Full width of the container */
+  flex-wrap: wrap; /* Allow content to wrap into the next row if needed */
+  justify-content: flex-start; /* Align cards in the tab section */
+  padding-left: 10px; /* Add space between the cards and the left edge */
+  padding-right: 10px;
+}
+ 
+/* Active Tab Panel */
+.tab-panel.active {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-start;
+  /* width: 163%; */
+  /* margin-top: 50px; */
+  /* margin-left: -666px; */
+}
+ 
+.card {
+  padding: 0; /* Ensure there's no padding to allow image to take full space */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column; /* Stack card content vertically */
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(25% - 30px); 
+  margin-bottom: 20px; /* Space between rows of cards */
+  box-sizing: border-box; /* Include padding in the element's total width */
+  overflow: hidden; /* Ensures image stays within card boundaries */
+}
+ 
+/* Card Image */
+.card-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 10px; */
+}
+ 
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image fully covers the container */
+}
+ 
+ 
+/* Card Info */
+.card-info {
+  padding: 15px; /* Adds space around the content */
+  text-align: center;
+  width: 100%; /* Ensure it takes up full width */
+  background-color: #fff; /* Background color for the content */
+  box-sizing: border-box; /* Ensure padding is considered in the width calculation */
+}
+ 
+.card-info h3 {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: justify;
+  margin-top: -4px;
+}
+ 
+.card-info p {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 23px;
+  margin-top: -13px;
   text-align: justify;
 }
 
-/* Cards Container */
-.product-list-cards1 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Four cards in a row */
-  gap: 30px;
-  justify-items: center;
+.card-info-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+
 }
 
-.product-list-card1 {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  width: 250px;
-  height: 300px;
+
+.card-info-description.expanded {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+
+.card-product-grams {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  padding-left: 3px;
+  border-radius: 4px;
+}
+
+ 
+.card-info .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  /* margin-left: -187px; */
+  padding-top: 10px;
+}
+ 
+ .add-to-cart {
+  background-color: #75b464;
+  color: white;
+  border: none;
+  border-radius: 40%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 35px;
+  height: 35px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  justify-content: center;
+  transition: background 0.3s;
+  margin-left: 245px;
+  margin-top: -54px;
+}
+ 
+.add-to-cart:hover {
+  background-color: #5e944d;
+}
+/* Style for View More button */
+.view-more {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #75b464; 
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 530px;
+  border: none;
   cursor: pointer;
 }
 
-/* Remove underline from links */
-.product-list-card1 a {
-  text-decoration: none; /* Removes the underline from the links */
-  color: inherit; /* Makes sure the text color is inherited from the parent element */
+.view-more:hover {
+  background-color: #75b464;
+  color: white;
 }
 
-/* Card Zoom Effect */
-.product-list-card1:hover {
-  transform: scale(1.1); /* Zoom effect */
+
+.view-more:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.5); /* Focus effect for accessibility */
 }
 
-/* Product Image */
-.product-list-image {
-  width: 247px;
-  height: 178px;
-  object-fit: cover;
+.success-message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #4caf50;
   border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-/* Card Name */
-.product-list-card1 h3 {
-  font-size: 20px;
-  margin-bottom: 0px;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Card Description */
-.product-list-card1 p {
-  font-size: 14px;
-  color: #555;
+  background-color: #dff0d8;
+  color: #3c763d;
   text-align: center;
+  margin-left: 60px;
 }
+
+/* Mobile View (480px and below) */
+@media (max-width: 480px) {
+  .tabset-container {
+    padding: 10px 0;
+    margin-bottom: 20px;
+  }
+  
+  .tabset-title {
+    padding-left: 30px;
+    font-size: 1.5rem;
+  }
+
+  .tabset {
+    flex-direction: column;
+    margin-left: -50px;
+    /* flex-wrap: wrap; Allow labels to wrap to new rows if needed */
+    /* justify-content: flex-start; Align labels to the left */
+    /* gap: 8px;  */
+  }
+  
+  .tabset label {
+    /* width: 31%;
+    margin-left: 85px;
+    padding: 10px 20px; */
+    display: inline-block; /* Allow dynamic width based on content */
+    font-size: 0.9rem; /* Smaller font size for compact view */
+    padding: 8px 15px; /* Adjust padding for smaller screens */
+    margin-right: 10px; /* Maintain spacing between labels */
+    white-space: nowrap;
+  }
+
+  .tabset input:checked + label {
+    background-color: #75b464; /* Highlight selected tab */
+    color: white;
+    text-align: center; /* Ensure text remains centered */
+  }
+
+  .tab-panels {
+    width: 90%;
+    margin-top: 15px;
+    align-items: flex-start;
+    margin-left: 15px
+  }
+
+  .tab-panel {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tab-panel.active {
+    margin-left: 0;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .card-img {
+    height: 150px;
+  }
+
+  .card-info .price {
+    margin-left: 0;
+    font-size: 1rem;
+    margin-right: 209px;
+  }
+
+  .card-info .add-to-cart {
+    margin-top: -29px;
+    width: 30px;
+    height: 40px;
+    margin-left: 217px;
+}
+.view-more {
+  /* display: inline-block; */
+  padding: 8px 14px;
+  margin-top: 20px;
+  background-color: #75b464;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left:90px;
+}
+  
+}
+
+/* Tablet View (481px to 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .tabset-container {
+    padding: 15px 0;
+  }
+
+  .tabset-title {
+    font-size: 1.8rem;
+  }
+
+  .tabset {
+    flex-direction: column;
+    margin-left: 0;
+  }
+  
+  .tabset label {
+    /* width: 100%;
+    margin-left: 0;
+    text-align: left;
+    padding: 10px 20px; */
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .tabset input:checked + label {
+    width: 100%;
+    text-align: left;
+  }
+
+  .tab-panels {
+    width: 100%;
+    margin-top: 20px;
+    gap: 30px;
+  }
+
+  .tab-panel {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tab-panel.active {
+    margin-left: 0;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .card {
+    width: calc(50% - 20px); /* Two cards per row */
+  }
+
+  .card-img {
+    height: 180px;
+  }
+
+  .card-info .price {
+    font-size: 1rem;
+  }
+
+  .card-info .add-to-cart {
+    margin-left: 10px;
+    width: 30px;
+    height: 40px;
+  }
+}
+
+
+

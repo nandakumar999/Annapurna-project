@@ -1,52 +1,106 @@
+/* Base Styles for Admin Side Menu */
+.admin-side-menu {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  left: -250px; /* Initially hidden */
+  top: 0;
+  height: 100%;
+  transition: left 0.3s ease;
+  padding-top: 20px;
+  z-index: 1000; /* Sidebar has higher z-index to sit on top of the content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center menu items vertically */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow to the sidebar */
+}
 
-  
-  /* Sidebar styling */
+.admin-side-menu.open {
+  left: 0; /* When sidebar is open, it comes to left 0 */
+}
+
+.admin-menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center menu items horizontally */
+}
+
+.admin-menu-item {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  border-bottom: 1px solid #444; /* Border between items */
+  width: 100%; /* Full width for the sidebar items */
+  text-align: center; /* Center text */
+}
+
+/* .admin-menu-item:hover {
+  background-color: #444;
+  transform: scale(1.05);
+} */
+
+.sidebar-close-btn {
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1001; /* Ensures the close button is on top */
+  display: none; /* Initially hidden */
+}
+
+/* Mobile/Tablet Specific Styles */
+@media (max-width: 768px) {
+  /* Sidebar hidden initially */
   .admin-side-menu {
-    width: 250px;
-    background-color: #2c3e50;
+    left: -250px;
     height: 100vh;
     position: fixed;
     top: 0;
+  }
+
+  .admin-side-menu.open {
+    left: 0; /* Slide in from the left */
+  }
+
+
+
+  /* Hide the toggle button when the sidebar is open */
+  .admin-side-menu.open + .sidebar-toggle {
+    display: none;
+  }
+
+  /* Show the close button when the sidebar is open */
+  .admin-side-menu.open .sidebar-close-btn {
+    display: block;
+  }
+
+  /* Adjust main content when sidebar is open */
+  .admin-dashboard.sidebar-open .main-content {
+    margin-left: 450px; /* Push content to the right */
+  }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+  /* Sidebar is always visible */
+  .admin-side-menu {
     left: 0;
-    padding-top: 160px;
-    /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    top: 0;
   }
-  
-  /* Menu list styling */
-  .admin-menu-list {
-    list-style-type: none; /* Remove default list styling */
-    padding: 0; /* No padding */
-    margin: 0; /* No margin */
-    width: 100%; /* Full width for the list */
+
+  /* Adjust content when sidebar is open */
+  .admin-dashboard.sidebar-open .main-content {
+    margin-left: 250px; /* Push content to the right when sidebar is open */
   }
-  
-  /* Each menu item */
-  .admin-menu-item {
-    margin-bottom: 30px;
-    padding: 10px 20px;
-    background-color: #34495e;
-    color: #ecf0f1;
-    cursor: pointer;
-    /* border-radius: 10px; */
-    text-align: center;
-    transition: background-color 0.3s ease;
-    /* width: 100%; */
-  }
-  
-  /* Hover effect for menu item */
-  .admin-menu-item:hover {
-    background-color: #2980b9; /* Change background color on hover */
-  }
-  
-  /* Active menu item class (optional if you want to highlight active tab) */
-  .admin-menu-item.active {
-    background-color: #2980b9; /* Active item background */
-    color: #fff; /* Text color for active item */
-  }
-  
- 
-  
+
+
+}

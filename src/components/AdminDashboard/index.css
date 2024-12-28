@@ -1,13 +1,140 @@
-/* General layout for Admin Dashboard with sidebar */
+/* Admin Dashboard Base Styles */
 .admin-dashboard {
-  display: flex; /* Flexbox layout for sidebar and main content */
-  height: 100vh; /* Full viewport height */
-  width: 100%;
+  display: flex;
+  height: 100vh;
+  transition: margin-left 0.3s ease-in-out;
 }
- 
-.main-content {margin-top: 100px;
-  margin-left: 290px;
-  padding: 20px;
-  width: calc(100% - 250px);
-  min-height: 100vh;
-  background-color: #f8f9fa;}
+
+.admin-dashboard.sidebar-open {
+  margin-left: 250px; /* Adjust the content area when sidebar is open */
+}
+
+.main-content {
+  margin-left: 84px;
+  width: 84%;
+  padding: 150px;
+  transition: margin-left 0.3s ease-in-out;
+  margin-top: -140px;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  display: block;
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  top: 20px; /* Adjust the vertical position */
+  left: 20px; /* Adjust the horizontal position */
+  z-index: 1001; /* Ensure it's on top */
+  cursor: pointer;
+  height: 45px;
+  width: 45px;
+}
+
+/* Sidebar Menu Styles */
+.admin-side-menu {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  left: -250px;
+  height: 100%;
+  transition: left 0.3s ease;
+  padding-top: 20px;
+}
+
+.admin-side-menu.open {
+  left: 0;
+}
+
+.admin-menu-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-menu-item {
+  padding: 15px 0px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #444;
+}
+
+.admin-menu-item:hover {
+  background-color: #444;
+}
+
+.sidebar-close-btn {
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .admin-side-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100vh;
+  }
+
+.main-content {
+    margin-left: -200px;
+    width: 100%;
+    padding: 150px;
+    transition: margin-left 0.3s ease-in-out;
+    margin-top: -140px;
+}
+
+  .admin-side-menu.open {
+    left: 0;
+  }
+
+  .admin-menu-item {
+    padding: 15px 0px;
+  }
+
+  /* Sidebar Toggle Button (Hamburger) */
+  .sidebar-toggle {
+    display: block;
+    font-size: 30px;
+    color: #231919;
+    background: none;
+    border: none;
+    height: 45px;
+    position: relative;
+    width: 45px;
+    top: -5px;
+    left: 0px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  /* Hide the hamburger when sidebar is open */
+  .admin-side-menu.open .sidebar-toggle {
+    display: none;
+  }
+
+  /* Show the close button when the sidebar is open */
+  .admin-side-menu.open .sidebar-close-btn {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .admin-side-menu {
+    left: 0;
+  }
+
+  .sidebar-toggle {
+    display: none;
+  }
+}

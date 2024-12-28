@@ -1,0 +1,659 @@
+/* General Form Styles */
+.AdminProductPrice_03_Form {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+  top: 0;
+  left:10px;
+  max-height: 100vh; 
+  width: 111%;
+}
+
+/* Title Section */
+.AdminProductPrice_03_Title {
+  font-size: 24px;
+  text-align: start;
+}
+
+/* Form Container Styles */
+.AdminProductPrice_03_FormContainer {
+  display: flex;
+  gap: 60px;
+  position: relative;
+  padding-top: 20px;
+}
+
+/* Form Input and Label Styles */
+.AdminProductPrice_03_FormContainer label {
+  display: block;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: start;
+}
+
+.AdminProductPrice_03_ProductIdInput,
+.AdminProductPrice_03_ProductInput,
+.AdminProductPrice_03_CostInput,
+.AdminProductPrice_03_GramsSelect {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.AdminProductPrice_03_GramsDropdown {
+  display: inline-block;
+  width: 50%;
+}
+
+/* Button Styling */
+.AdminProductPrice_03_AddButton,
+.AdminProductPrice_03_UpdateButton,
+.AdminProductPrice_03_CancelButton {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  width: 145px;
+  height: 40px;
+  border: none;
+  margin-top: 28px;
+  border-radius: 5px;
+}
+
+.AdminProductPrice_03_DeleteButton {
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  width: 68px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+.AdminProductPrice_03_EditButton {
+  background-color: #008cba;
+  color: white;
+  cursor: pointer;
+  width: 68px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Table Wrapper (with scrollable body) */
+.AdminProductPrice_03_PriceTableWrapper {
+  width: 100%;
+  position: relative;
+  top: 170px;
+  overflow: hidden;
+  height: 410px;
+  display: block;
+}
+
+/* Table Structure */
+.AdminProductPrice_03_PriceTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: 1px solid #ddd;
+}
+
+/* Table header (fixed) */
+.AdminProductPrice_03_PriceTable th {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Table Data (Rows) */
+.AdminProductPrice_03_PriceTable td {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Styling to make sure each column has a fixed width */
+.AdminProductPrice_03_PriceTable th:nth-child(1),
+.AdminProductPrice_03_PriceTable td:nth-child(1) {
+  width: 15%; /* Adjust column width */
+  text-align: center;
+}
+
+.AdminProductPrice_03_PriceTable th:nth-child(2),
+.AdminProductPrice_03_PriceTable td:nth-child(2) {
+  width: 25%; /* Adjust column width */
+}
+
+.AdminProductPrice_03_PriceTable th:nth-child(3),
+.AdminProductPrice_03_PriceTable td:nth-child(3) {
+  width: 25%; /* Adjust column width */
+}
+
+.AdminProductPrice_03_PriceTable th:nth-child(4),
+.AdminProductPrice_03_PriceTable td:nth-child(4) {
+  width: 20%; /* Adjust column width */
+}
+
+.AdminProductPrice_03_PriceTable th:nth-child(5),
+.AdminProductPrice_03_PriceTable td:nth-child(5) {
+  width: 15%; /* Adjust column width */
+}
+
+/* Make the table body scrollable by applying overflow */
+.AdminProductPrice_03_PriceTableWrapper {
+  overflow-y: auto;
+  height: 410px;
+}
+
+.AdminProductPrice_03_PriceTable tbody {
+  display: block;
+  max-height: 415px;
+  overflow-y: scroll;
+  width: 100%;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+/* For Webkit browsers (Chrome, Safari) */
+.AdminProductPrice_03_PriceTable tbody::-webkit-scrollbar {
+  display: none;
+}
+.AdminProductPrice_03_PriceTable tr{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+/* Fixing the column alignment */
+.AdminProductPrice_03_PriceTable td,
+.AdminProductPrice_03_PriceTable th {
+  box-sizing: border-box;
+}
+
+/* Adjust padding in table data cells to align content properly */
+.AdminProductPrice_03_PriceTable td {
+  padding: 12px 10px;
+}
+
+/* Styling for Buttons inside the Table */
+.AdminProductPrice_03_PriceTable td button {
+  margin: 5px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+}
+
+
+/* Popup styling */
+.AdminProductPrice_03_PopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.AdminProductPrice_03_PopupContent {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.AdminProductPrice_03_PopupButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.popup_button_yes_delete_0 {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #db2525;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.popup_button_yes_delete_0:hover {
+  background-color: #ac1515;
+}
+
+.popup_button_yes_cancel_0 {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #1dbe1d;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.popup_button_yes_cancel_0:hover {
+  background-color: #138b13;
+}
+
+/* Hide table header when popup is active */
+.AdminProductPrice_03_Form.popup-active .AdminProductPrice_03_PriceTableWrapper {
+  display: none;
+}
+
+.AdminProductPrice_03_Form.popup-active .AdminProductPrice_03_PriceTable th {
+  display: none;
+}
+
+/* Add Product Button */
+.AdminProductPrice_03_AddProductButton {
+  width: 200px;
+  height: 40px;
+  margin-left: 355px;
+  margin-top: -40px;
+  margin-bottom: 24px;
+  background-color: #25c125;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.AdminProductPrice_03_AddProductButton:hover {
+  background-color: #0d940d;
+}
+
+/* Update button styling */
+.AdminProductPrice_03_Update {
+  background-color: #10b710;
+  border: none;
+  width: 80px;
+  height: 25px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.AdminProductPrice_03_Update:hover {
+  background-color: #109210;
+  color: #000;
+}
+
+/* Edit button styling */
+.AdminProductPrice_03_Edit {
+  margin-right: 5px;
+  width: 60px;
+  border: none;
+  background-color: #3b3bd6;
+  color: #fff;
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.AdminProductPrice_03_Edit:hover {
+  background-color: #0c0c6d;
+}
+
+/* Label Name Styling */
+.AdminProductPrice_03_LabelName {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: start;
+}
+
+/* Popup Overlay */
+.AdminProductPrice_03_DeletePopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup Content */
+.AdminProductPrice_03_DeletePopupContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 300px;
+}
+
+.AdminProductPrice_03_DeletePopupContent h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Popup Buttons Container */
+.AdminProductPrice_03_DeletePopupButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+/* Yes Button */
+.AdminProductPrice_03_DeletePopupButtons button:first-child {
+  padding: 10px 20px;
+  background-color: #db2525;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.AdminProductPrice_03_DeletePopupButtons button:first-child:hover {
+  background-color: #ac1515;
+}
+
+/* Cancel Button */
+.AdminProductPrice_03_DeletePopupButtons button:last-child {
+  padding: 10px 20px;
+  background-color: #1dbe1d;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.AdminProductPrice_03_DeletePopupButtons button:last-child:hover {
+  background-color: #138b13;
+}
+
+
+/* Mobile Small (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  .AdminProductPrice_03_Form {
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+    max-height: auto;
+    box-sizing: border-box;
+  }
+
+  .AdminProductPrice_03_Title {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  /* Form Layout Adjustments */
+  .AdminProductPrice_03_FormContainer {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .AdminProductPrice_03_FormContainer label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    width: 63%;
+  }
+
+  .AdminProductPrice_03_ProductIdInput,
+  .AdminProductPrice_03_ProductInput,
+  .AdminProductPrice_03_CostInput,
+  .AdminProductPrice_03_GramsSelect {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+
+  .AdminProductPrice_03_GramsDropdown {
+    width: 100%;
+  }
+
+  .AdminProductPrice_03_AddButton,
+  .AdminProductPrice_03_UpdateButton,
+  .AdminProductPrice_03_CancelButton {
+    width: 63%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .AdminProductPrice_03_DeleteButton,
+  .AdminProductPrice_03_EditButton {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  /* Table Wrapping and Scrolling */
+  .AdminProductPrice_03_PriceTableWrapper {
+    width: 100%;
+    max-height: 300px; /* Adjust height for mobile */
+    overflow-x: auto;  /* Allow horizontal scrolling */
+    overflow-y: auto;  /* Enable vertical scrolling if needed */
+    display: block;
+    box-sizing: border-box;
+  }
+
+  /* Ensure the table takes the full width */
+  .AdminProductPrice_03_PriceTable {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    display: block;
+    margin-right: 403px;
+  }
+  .AdminProductPrice_03_PriceTable th:nth-child(4), 
+  .AdminProductPrice_03_PriceTable td:nth-child(4) {
+    width: 30%;
+  }
+  .AdminProductPrice_03_PriceTable th:nth-child(1), 
+  .AdminProductPrice_03_PriceTable td:nth-child(1) {
+    width: 25%;
+    text-align: center;
+  }
+  /* Table Headers */
+  .AdminProductPrice_03_PriceTable th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  /* Table Cells */
+  .AdminProductPrice_03_PriceTable td {
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+  }
+
+  /* Styling Buttons inside the Table */
+  .AdminProductPrice_03_PriceTable td button {
+    width: 100%;  /* Make buttons responsive */
+    margin: 5px;
+    font-size: 12px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  /* Add Product Button */
+  .AdminProductPrice_03_AddProductButton {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+  }
+
+  /* Popup styling */
+  .AdminProductPrice_03_PopupOverlay {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .AdminProductPrice_03_PopupContent {
+    width: 90%;
+    max-width: 320px;
+    padding: 20px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile Medium (481px to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .AdminProductPrice_03_Form {
+    padding: 15px;
+  }
+
+  .AdminProductPrice_03_Title {
+    font-size: 22px;
+  }
+
+  .AdminProductPrice_03_FormContainer {
+    flex-direction: row;
+    gap:5px;
+  }
+
+  .AdminProductPrice_03_FormContainer label {
+    font-size: 15px;
+  }
+  .AdminProductPrice_03_PriceTable {
+    margin-right: 641px;
+  }
+
+  .AdminProductPrice_03_ProductIdInput,
+  .AdminProductPrice_03_ProductInput,
+  .AdminProductPrice_03_CostInput,
+  .AdminProductPrice_03_GramsSelect {
+    width:85%;
+    font-size: 11px;
+    padding: 12px;
+  }
+
+  .AdminProductPrice_03_GramsDropdown {
+    width: 100%;
+  }
+
+  .AdminProductPrice_03_AddButton,
+  .AdminProductPrice_03_UpdateButton,
+  .AdminProductPrice_03_CancelButton {
+    width: 24%;
+    padding: 12px;
+    height: 49px;
+
+  }
+
+  .AdminProductPrice_03_DeleteButton,
+  .AdminProductPrice_03_EditButton {
+    width: 100%;
+    height: 40px;
+  }
+
+  .AdminProductPrice_03_PriceTableWrapper {
+    width: 100%;
+    height: 350px;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  .AdminProductPrice_03_PriceTable th,
+  .AdminProductPrice_03_PriceTable td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+
+  .AdminProductPrice_03_PriceTable td button {
+    width: 48%;
+    margin-right: 4%;
+  }
+
+  .AdminProductPrice_03_AddProductButton {
+    width: 100%;
+  }
+}
+
+/* Tablet and larger (769px to 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .AdminProductPrice_03_Form {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .AdminProductPrice_03_Title {
+    font-size: 24px;
+  }
+
+  .AdminProductPrice_03_FormContainer {
+    flex-direction: row;
+    gap:0px;
+  }
+
+  .AdminProductPrice_03_FormContainer label {
+    font-size: 16px;
+  }
+  .AdminProductPrice_03_PriceTable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 1px solid #ddd;
+    margin-right:712px;
+}
+
+  .AdminProductPrice_03_ProductIdInput,
+  .AdminProductPrice_03_ProductInput,
+  .AdminProductPrice_03_CostInput,
+  .AdminProductPrice_03_GramsSelect {
+    width: 80%;
+    font-size: 13px;
+  }
+
+  .AdminProductPrice_03_GramsDropdown {
+    width: 48%;
+  }
+
+  .AdminProductPrice_03_AddButton,
+  .AdminProductPrice_03_UpdateButton,
+  .AdminProductPrice_03_CancelButton {
+    width: 145px;
+    padding: 12px;
+    height: 40px;
+  }
+
+  .AdminProductPrice_03_DeleteButton,
+  .AdminProductPrice_03_EditButton {
+    width: 70px;
+    height: 30px;
+  }
+
+  .AdminProductPrice_03_PriceTableWrapper {
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+  }
+
+  .AdminProductPrice_03_PriceTable th,
+  .AdminProductPrice_03_PriceTable td {
+    font-size: 16px;
+    padding: 12px 10px;
+  }
+}

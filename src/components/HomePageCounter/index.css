@@ -1,0 +1,161 @@
+
+.counter-section {
+    margin-top: 70px;
+    background-color: #fff;
+  }
+  
+  .counter-section h1 {
+    font-size: 1.5rem;
+    color: #000;
+
+  }
+  .counter-section_title_09 {
+    font-size: 1.5rem;
+    color: #000;
+    margin: 0 auto;
+    margin-left: 70px;
+    text-align: start;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #514646;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0px 109px;
+    text-align: justify;
+    margin-left: 573px;
+    margin-top: -30px;
+    line-height: 1.6;
+  }
+  
+  .counter-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .counter-col {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  .counter-col h1 {
+    font-size: 2.5rem;
+    color: #000;
+  }
+  
+  .counter-col p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #000;
+  }
+  
+  /* Responsive Design */
+  /* Large Desktop */
+  @media (max-width: 1200px) {
+    .counter-section h1 {
+      font-size: 2.3rem;
+    }
+  
+    .description {
+      font-size: 0.95rem;
+      padding: 0 15px;
+    }
+  
+    .counter-col h1 {
+      font-size: 2.3rem;
+    }
+  }
+  
+  /* Medium Desktop */
+  @media (max-width: 992px) {
+    .counter-section h1 {
+      font-size: 2.1rem;
+    }
+  
+    .description {
+      font-size: 0.9rem;
+      padding: 0 10px;
+    }
+  
+    .counter-col h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Tablet */
+  @media (max-width: 768px) {
+    .counter-section h1 {
+        font-size: 1.8rem;
+        margin-left: 22px;
+    }
+  
+    .description {
+      font-size: 0.85rem;
+      /* padding: 6px -1px; */
+      /* margin-right: -177px; */
+      margin-left: 17px;
+      margin-top: 13px;
+        }
+  
+    .counter-col h1 {
+        font-size: 1.7rem;
+        margin-left: 0px !important;   
+     }
+  
+    .counter-col p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Small Tablet and Large Mobile */
+  @media (max-width: 576px) {
+    .counter-section h1 {
+        font-size: 1.6rem;
+        margin-left: 34px;
+    }
+  
+    .description {
+        font-size: 0.8rem;
+        padding: 14px 27px;
+        margin-left: 11px;
+    }
+  
+    .counter-col h1 {
+        font-size: 1.5rem;
+        margin-left: 4px !important;
+    }
+  
+    .counter-col p {
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* Small Mobile */
+  @media (max-width: 400px) {
+    .counter-section h1 {
+        font-size: 1.4rem;
+        margin-left: 27px;
+        }
+  
+    .description {
+        font-size: 0.75rem;
+        padding: 24px 10px;
+        margin-left: 18px;
+    }
+  
+    .counter-col h1 {
+        font-size: 1.3rem;
+        margin-left: 0px !important;   
+     }
+  
+    .counter-col p {
+      font-size: 0.8rem;
+      margin-left: 0px;
+    }
+  }
+  

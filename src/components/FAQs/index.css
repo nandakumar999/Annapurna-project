@@ -1,0 +1,51 @@
+.faq-container {
+    max-height: 500px;
+    max-width: 1210px;
+    overflow-y: hidden;
+    padding: 15px;
+    margin: 20px auto;
+    }
+   
+    .faq-accordion {
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 20px;
+    }
+   
+    .faq-box {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+   
+    .faq-title {
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      text-align: justify;
+    }
+   
+    .faq-symbol {
+      font-size: 20px;
+      font-weight: bold;
+      margin-right: 10px;
+      color: #000000;
+    }
+   
+    .faq-title.active .faq-symbol {
+      color: #000000;
+    }
+   
+    .faq-content {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 19px;
+      text-align: justify;
+    }
+    .faq-heading{
+      font-size: 2pc;
+      text-align: justify;
+    }
+   

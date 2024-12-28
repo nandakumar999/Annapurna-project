@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './index.css';
+import './index.css'; // Changed to match the new CSS file name
 
 const AdminCategory = () => { 
   const [categoryName, setCategoryName] = useState('');
@@ -7,10 +7,11 @@ const AdminCategory = () => {
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  
+  const [isLoading, setIsLoading] = useState(false); // Loading state for adding category
+
+
 
   // Function to fetch categories from the backend
-  useEffect(() => {
   const fetchCategories = async () => {
     try {
       const response = await fetch('http://localhost:8080/category');
@@ -21,6 +22,7 @@ const AdminCategory = () => {
     }
   };
 
+  useEffect(() => {
     fetchCategories();
   }, []);
 
@@ -28,6 +30,7 @@ const AdminCategory = () => {
   const addCategory = async () => {
     if (!categoryName) return;
 
+    setIsLoading(true); // Show loading state
     try {
       const response = await fetch('http://localhost:8080/category', {
         method: 'POST',
@@ -41,13 +44,14 @@ const AdminCategory = () => {
         throw new Error('Error adding category');
       }
 
+      // Fetch updated category list
+      await fetchCategories();
 
-
-      const newCategory = await response.json();
-      setCategories((prevCategories) => [...prevCategories, newCategory]);
-      setCategoryName('');
+      setCategoryName(''); // Clear input field
     } catch (error) {
       console.error('Error adding category:', error);
+    } finally {
+      setIsLoading(false); // Hide loading state
     }
   };
 
@@ -75,14 +79,10 @@ const AdminCategory = () => {
         throw new Error('Error updating category');
       }
 
-      const updatedCategory = await response.json();
-      setCategories((prevCategories) =>
-        prevCategories.map((category) =>
-          category.categoryId === selectedCategoryId ? updatedCategory : category
-        )
-      );
+      // Fetch updated category list
+      await fetchCategories();
 
-      setCategoryName('');
+      setCategoryName(''); // Clear input field
       setIsEditing(false);
       setSelectedCategoryId(null);
     } catch (error) {
@@ -114,7 +114,11 @@ const AdminCategory = () => {
   };
 
   const handleInputChange = (e) => {
-    setCategoryName(e.target.value);
+    const value = e.target.value;
+    // Regular expression to allow only letters and spaces
+    if (/^[a-zA-Z\s]*$/.test(value)) {
+      setCategoryName(value);
+    }
   };
 
   const closePopup = () => {
@@ -123,26 +127,31 @@ const AdminCategory = () => {
   };
 
   return (
-    <div className="category-page">
-      <h1 className="Categories_name">Categories</h1>
-      <div className="category-input">
-        <input
-          type="text"
-          placeholder="Enter category name"
-          value={categoryName}
-          onChange={handleInputChange}
-          className="category-input-name"
-          disabled={isEditing} // Disable input when in edit mode
-        />
-        <button onClick={addCategory} disabled={!categoryName || isEditing}>Add</button>
+    <div className="AdminCategory_01_page">
+      <h1 className="AdminCategory_01_title">Categories</h1>
+      <div className="AdminCategory_01_input">
+        <label className='AdminCategory_01_labelname'>
+          Category Name:
+          <input
+            type="text"
+            placeholder="Enter category name"
+            value={categoryName}
+            onChange={handleInputChange}
+            className="AdminCategory_01_input-name"
+            disabled={isEditing} // Disable input when in edit mode
+          />
+        </label>
+        <button onClick={addCategory} disabled={!categoryName || isLoading || isEditing} className='AdminCategory_01_add_category_button'>
+          {isLoading ? 'Adding...' : 'Add Category'}
+        </button>
       </div>
 
-      <table className="category-table">
+      <table className="AdminCategory_01_table">
         <thead>
           <tr>
             <th>Category ID</th>
             <th>Category Name</th>
-            {/* <th>Actions</th> */}
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -168,8 +177,8 @@ const AdminCategory = () => {
                   <button onClick={updateCategory}>Update</button>
                 ) : (
                   <>
-                    <button onClick={() => editCategory(category.categoryId, category.categoryName)}>Edit</button>
-                    <button className = "category-delete" onClick={() => confirmDeleteCategory(category.categoryId)}>Delete</button>
+                    <button onClick={() => editCategory(category.categoryId, category.categoryName)} className='AdminCategory_01_edit'>Edit</button>
+                    <button className="AdminCategory_01_delete" onClick={() => confirmDeleteCategory(category.categoryId)}>Delete</button>
                   </>
                 )}
               </td>
@@ -179,12 +188,12 @@ const AdminCategory = () => {
       </table>
 
       {showDeletePopup && (
-        <div className="popup-overlay">
-          <div className="popup-content">
+        <div className="AdminCategory_01_popup-overlay">
+          <div className="AdminCategory_01_popup-content">
             <h3>Are you sure you want to delete this category?</h3>
-            <div className="popup-buttons">
-              <button onClick={deleteCategory}>Yes, Delete</button>
-              <button onClick={closePopup}>Cancel</button>
+            <div className="AdminCategory_01_popup-buttons">
+              <button onClick={deleteCategory} className="admin_category_popup_delete">Yes, Delete</button>
+              <button onClick={closePopup} className="admin_category_popup_cancel">Cancel</button>
             </div>
           </div>
         </div>
