@@ -13,7 +13,7 @@ const Header = ({ cartCount, cart }) => {
 
   // Carousel items for "Products"
   const categoryImages = {
-    "Powders": "/img/powders.jpg",
+    "Powder": "/img/powders.jpg",
     "Masala": "/img/masala.jpg",
     "Veg Pickles": "/img/pickles.jpg",
     "Non Veg Pickles": "/img/natural_oil.jpg",
